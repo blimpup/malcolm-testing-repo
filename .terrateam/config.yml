@@ -1,5 +1,2 @@
 access_control:
-  enabled: true
-  policies:
-    - tag_query: ""
-      apply: ['repo:admin']
+  enabled: false
