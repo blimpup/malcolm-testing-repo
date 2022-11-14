@@ -1,7 +1,8 @@
+when_modified:
+  autoplan: false
 access_control:
   enabled: true
   policies:
   - tag_query: ''
     plan: ['*']
-    apply: []
-    superapproval: ['user:terrateam-test-user01']
+
