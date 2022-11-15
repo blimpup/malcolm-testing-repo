@@ -1,12 +1,8 @@
-when_modified:
-  autoplan: false
 access_control:
   enabled: true
   policies:
-  - tag_query: 'dir:tf2'
-    plan: ['*']
-    apply: []
   - tag_query: ''
     plan: ['*']
-    apply: ['*']
-
+    apply: []
+    superapproval: ['user:terrateam-test-user01']
+    apply_with_superapproval: ['user:terrateam-test-user02']
