@@ -1,15 +1,8 @@
-#! /usr/bin/env bash
-
-set -e
-set -u
-set -o pipefail
-
-cat << EOF > "$1"
+when_modified:
+  autoplan: false
 access_control:
   enabled: true
-  terrateam_config_update: ['user:${PLAN_USER}']
   policies:
   - tag_query: ''
     plan: ['*']
-    apply: ['*']
-EOF
+
