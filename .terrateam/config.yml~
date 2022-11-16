@@ -1,5 +1,3 @@
 access_control:
   enabled: false
-  policies:
-    - tag_query: ''
-      plan: []
+  terrateam_config_update: ['user:$TERRAT_USERNAME']
