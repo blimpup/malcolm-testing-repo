@@ -2,7 +2,6 @@ when_modified:
   autoplan: false
 access_control:
   enabled: true
-  apply_require_all_dirspace_access: false
   policies:
   - tag_query: 'dir:tf2'
     plan: ['*']
