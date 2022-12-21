@@ -1,0 +1,10 @@
+
+access_control:
+  enabled: true
+  policies:
+  - tag_query: ''
+    plan: ['*']
+    apply: []
+    superapproval: ['user:$SUPERAPPROVER']
+    apply_with_superapproval: ['user:$APPLIER']
+
