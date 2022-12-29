@@ -1,0 +1,16 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "FOO"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+      - type: init
+      - type: plan
+    apply:
+      - type: env
+        cmd: ["./aws-creds-setup.sh"]
+        method: source
+      - type: init
+      - type: apply
