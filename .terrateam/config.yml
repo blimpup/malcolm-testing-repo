@@ -1,8 +1,8 @@
 dirs:
-  "./":
+  ".":
     when_modified:
       file_patterns:
-        - "subdir/**/.tf"
+        - "subdir/**/*.tf"
         - "./*.tf"
   "subdir/**":
     when_modified:
