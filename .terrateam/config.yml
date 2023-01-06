@@ -24,6 +24,7 @@ workflows:
         cmd: ["echo", "STAGING"]
       - type: run
         cmd: ["${TERRATEAM_ROOT}/expect-env", "RUN_ENV"]
+        capture_output: true
       - type: init
       - type: plan
     apply:
@@ -32,6 +33,7 @@ workflows:
         cmd: ["echo", "STAGING"]
       - type: run
         cmd: ["${TERRATEAM_ROOT}/expect-env", "RUN_ENV"]
+        capture_output: true
       - type: init
       - type: apply
   - tag_query: production
@@ -41,6 +43,7 @@ workflows:
         cmd: ["echo", "PROD"]
       - type: run
         cmd: ["${TERRATEAM_ROOT}/expect-env", "RUN_ENV"]
+        capture_output: true
       - type: init
       - type: plan
     apply:
@@ -49,5 +52,6 @@ workflows:
         cmd: ["echo", "PROD"]
       - type: run
         cmd: ["${TERRATEAM_ROOT}/expect-env", "RUN_ENV"]
+        capture_output: true
       - type: init
       - type: apply
