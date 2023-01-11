@@ -3,3 +3,9 @@ when_modified:
   autoplan: true
   autoplan_draft_pr: true
   autoapply: false
+dirs:
+  ".":
+    when_modified:
+      file_patterns:
+        - "*.tf"
+        - "*.tfvars"
