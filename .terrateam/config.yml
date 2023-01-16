@@ -1,0 +1,3 @@
+dirs:
+  'Foo.Bar/Baz Zoom/*.tf':
+    tags: [test]
