@@ -1,3 +1,12 @@
+#! /usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+ACTION_BRANCH="${TERRAT_ACTION_BRANCH:-v1}"
+
+cat << EOF > "$1"
  ##########################################################################
  # DO NOT MODIFY
  #
@@ -31,10 +40,10 @@
            fetch-depth: 0
        - name: Run Terrateam Action
          id: terrateam
-         uses: terrateamio/action@pro-260-add-tf-var-transformation
+         uses: terrateamio/action@${ACTION_BRANCH}
          with:
-           work-token: '${{ github.event.inputs.work-token }}'
-           api-base-url: '${{ github.event.inputs.api-base-url }}'
+           work-token: '\${{ github.event.inputs.work-token }}'
+           api-base-url: '\${{ github.event.inputs.api-base-url }}'
          env:
-           SECRETS_CONTEXT: ${{ toJson(secrets) }}
-           TF_VAR_BAR: FOO
+           SECRETS_CONTEXT: \${{ toJson(secrets) }}
+EOF
