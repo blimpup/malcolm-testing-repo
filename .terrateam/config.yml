@@ -1,0 +1,6 @@
+hooks:
+  all:
+    post:
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "TF_VAR_bar_baz"]
+        capture_output: true
