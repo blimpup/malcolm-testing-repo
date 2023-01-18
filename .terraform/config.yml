@@ -1,0 +1,6 @@
+hooks:
+  all:
+    pre:
+      - type: env
+        name: TF_LOG
+        cmd: ["echo", "trace"]
