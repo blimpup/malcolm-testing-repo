@@ -1,0 +1,8 @@
+hooks:
+  plan:
+    pre:
+      - type: run
+        cmd: ["echo", "HELLO THERE"]
+      - type: env
+        name: TF_LOG
+        cmd: ["echo", "trace"]
