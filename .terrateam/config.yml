@@ -1,0 +1,9 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ["echo", "HELLO THERE"]
+        capture_output: true
+      - type: env
+        name: TF_LOG
+        cmd: ["echo", "trace"]
