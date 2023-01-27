@@ -1,5 +1,0 @@
-when_modified:
-  file_patterns: ["**/*.tf", "**/*.tfvars"]
-  autoplan: true
-  autoplan_draft_pr: true
-  autoapply: false
