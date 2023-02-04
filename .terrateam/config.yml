@@ -1,0 +1,8 @@
+workflows:
+  - tag_query: cdktf
+    cdktf: true
+dirs:
+  '**/*.ts':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.ts']
