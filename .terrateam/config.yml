@@ -1,0 +1,28 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['apt-get', 'update']
+      - type: run
+        cmd: ['apt-get', 'install', 'xz-utils']
+      - type: run
+        cmd: ['curl', '-o', '/tmp/node.tar.xz', 'https://nodejs.org/dist/v18.14.0/node-v18.14.0-linux-x64.tar.xz']
+      - type: run
+        cmd: ['bash', '-c', 'cd /tmp && xz -dc /tmp/node.tar.xz | tar -xf -']
+      - type: env
+        name: PATH
+        cmd: ['echo', '${PATH}:/tmp/node-v18.14.0-linux-x64/bin:/tmp/node-v18.14.0-linux-x64/lib/node_modules/cdktf-cli/bundle/bin']
+      - type: run
+        cmd: ['npm', 'root', '-g']
+      - type: run
+        cmd: ['npm', 'install', '--global', 'cdktf-cli@latest']
+      - type: run
+        cmd: ['find', '/tmp', '-type', 'f', '-name', 'cdktf']
+workflows:
+  - tag_query: cdktf
+    cdktf: true
+dirs:
+  '**/main.ts':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.ts']
