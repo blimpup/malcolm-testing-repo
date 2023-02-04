@@ -1,0 +1,17 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['bash', '-c', 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash']
+      - type: run
+        cmd: ['nvm', 'install', '--lts']
+      - type: run
+        cmd: ['npm', 'install', '--global', 'cdktf-cli@latest']
+workflows:
+  - tag_query: cdktf
+    cdktf: true
+dirs:
+  '**/main.ts':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.ts']
