@@ -1,0 +1,20 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['bash', '-c', 'curl -sL https://deb.nodesource.com/setup_14.x | bash -']
+      - type: run
+        cmd: ['apt-get', 'install', '-y', '--no-install-recommends', 'npm', 'nodejs']
+      - type: run
+        cmd: ['npm', 'install', 'cdktf-cli@latest']
+      - type: env
+        name: PATH
+        cmd: ['echo', '${PATH}:${TERRATEAM_ROOT}/node_modules/.bin']
+workflows:
+  - tag_query: cdktf
+    cdktf: true
+dirs:
+  '**/main.ts':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.ts']
