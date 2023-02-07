@@ -1,0 +1,24 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['npm', 'install', 'cdktf-cli@latest']
+      - type: run
+        cmd: ['ls', '-l', '/usr/local/bin']
+      - type: run
+        cmd: ['npm', 'root']
+      - type: run
+        cmd: ['npm', 'root', '-g']
+      - type: run
+        cmd: ['ls', '-lR', '/usr/local/node-v18.14.0-linux-x64']
+workflows:
+  - tag_query: cdktf
+    cdktf: true
+dirs:
+  '**/main.ts':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.ts']
+    stacks:
+      'cdktf-stack1':
+        tags: []
