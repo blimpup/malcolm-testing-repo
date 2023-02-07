@@ -1,0 +1,16 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['ls', '-l', '/usr/local/bin']
+workflows:
+  - tag_query: cdktf
+    cdktf: true
+dirs:
+  '**/main.ts':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.ts']
+    stacks:
+      'cdktf-stack1':
+        tags: []
