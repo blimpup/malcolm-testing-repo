@@ -1,0 +1,20 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['which', 'cdktf']
+      - type: run
+        cmd: ['npm', 'install', 'cdktf-cli@latest']
+      - type: run
+        cmd: ['which', 'cdktf']
+workflows:
+  - tag_query: cdktf
+    cdktf: true
+dirs:
+  '**/main.ts':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.ts']
+    stacks:
+      'cdktf-stack':
+        tags: []
