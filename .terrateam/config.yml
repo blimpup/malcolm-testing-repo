@@ -1,0 +1,21 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['ls', '-l', '/usr/local/bin']
+      - type: run
+        cmd: ['ls', '-lR', '/usr/local/node-v18.14.0-linux-x64']
+      - type: env
+        name: PATH
+        cmd: ['echo', '/usr/local/node-v18.14.0-linux-x64/bin:${PATH}']
+workflows:
+  - tag_query: cdktf
+    cdktf: true
+dirs:
+  '**/main.ts':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.ts']
+    stacks:
+      'cdktf-stack1':
+        tags: []
