@@ -1,18 +1,37 @@
 hooks:
   all:
     pre:
+      - type: run
+        cmd: ['apt-get', 'install', '-y', 'strace']
+
+      - type: run
+        cmd: ['mkdir', '/tmp/cdktf']
+      - type: run
+        cmd: ['bash', '-c', 'cd /tmp/cdktf && npm install cdktf-cli@latest && ls -a /tmp/cdktf/node_modules/']
+        # cmd: ['bash', '-c', 'npm install -g --prefix=/tmp/cdktf cdktf-cli@latest && ls -a /tmp/cdktf']
       - type: env
         name: PATH
-        cmd: ['echo', '${PATH}:/usr/local/cdktf/bin']
+        cmd: ['echo', '/tmp/cdktf/node_modules/.bin:${PATH}']
+        # cmd: ['echo', '/tmp/cdktf/bin:${PATH}']
+
+
+      # - type: run
+      #   cmd: ['npm', 'install', 'cdktf-cli@latest']
+      # - type: env
+      #   name: PATH
+      #   cmd: ['echo', '${TERRATEAM_ROOT}/node_modules/.bin:${PATH}']
       - type: run
         cmd: ['which', 'cdktf']
-      # - type: run
-      #   cmd: ['npm', 'install', '-g', 'cdktf-cli@latest']
-      # - type: run
-      #   cmd: ['which', 'cdktf']
 workflows:
   - tag_query: cdktf
     cdktf: true
+    plan:
+      - type: run
+        cmd: ['cdktf', 'get']
+      - type: run
+        cmd: ['strace', '-f', 'cdktf', 'synth']
+      - type: init
+      - type: plan
 dirs:
   '**/main.ts':
     tags: [cdktf]
