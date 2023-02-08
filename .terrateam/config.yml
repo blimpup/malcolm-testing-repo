@@ -1,0 +1,15 @@
+when_modified:
+  autoplan: false
+workflows:
+  - tag_query: cdktf
+    cdktf: true
+dirs:
+  '**/main.ts':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.ts']
+    stacks:
+      'cdktf-stack1':
+        tags: []
+      'cdktf-stack2':
+        tags: []
