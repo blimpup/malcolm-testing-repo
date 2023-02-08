@@ -1,0 +1,9 @@
+when_modified:
+  autoplan: false
+dirs:
+  tf1:
+    tags: [tf1]
+  tf2:
+    tags: [tf2]
+  tf3:
+    tags: [tf3]
