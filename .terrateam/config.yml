@@ -1,0 +1,6 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+      - type: plan
+        extra_args: ['-var-file=tf.tfvars']
