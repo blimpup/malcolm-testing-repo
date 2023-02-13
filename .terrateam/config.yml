@@ -1,0 +1,14 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "TERRATEAM_RUN_KIND"]
+        capture_output: true
+      - type: init
+      - type: plan
+    apply:
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "TERRATEAM_RUN_KIND"]
+        capture_output: true
+      - type: init
+      - type: apply
