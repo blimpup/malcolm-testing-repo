@@ -1,0 +1,18 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['echo', 'TERRATEAM_RUN_KIND=${TERRATEAM_RUN_KIND}=']
+        capture_output: true
+      - type: run
+        cmd: ['test', '-n', '$TERRATEAM_RUN_KIND']
+      - type: init
+      - type: plan
+    apply:
+      - type: run
+        cmd: ['echo', 'TERRATEAM_RUN_KIND=${TERRATEAM_RUN_KIND}=']
+        capture_output: true
+      - type: run
+        cmd: ['test', '-n', '$TERRATEAM_RUN_KIND']
+      - type: init
+      - type: apply
