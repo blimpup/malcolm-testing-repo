@@ -2,3 +2,8 @@ drift:
   enabled: true
   schedule: hourly
   reconcile: true
+hooks:
+  apply:
+    pre:
+      - type: run
+        cmd: ['test', '-n', '']
