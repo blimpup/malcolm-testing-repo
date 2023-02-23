@@ -1,7 +1,0 @@
-drift:
-  enabled: true
-  schedule: hourly
-hooks:
-  plan:
-    post:
-      - type: drift_create_issue
