@@ -1,7 +1,5 @@
-access_control:
-  enabled: true
-  policies:
-  - tag_query: ''
-    plan: ['*']
-    apply: []
-    superapproval: ['user:terrateam-test-user01']
+apply_requirements:
+  checks:
+    approved:
+      enabled: true
+      count: 1
