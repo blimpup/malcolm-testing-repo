@@ -1,3 +1,0 @@
-workflows:
-  - tag_query: "dir:tf"
-    lock_policy: none
