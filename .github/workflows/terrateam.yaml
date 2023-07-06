@@ -31,7 +31,7 @@
            fetch-depth: 0
        - name: Run Terrateam Action
          id: terrateam
-         uses: terrateamio/action@pro-359-fix-shallow-checkout-deepening
+         uses: terrateamio/action@main
          with:
            work-token: '${{ github.event.inputs.work-token }}'
            api-base-url: '${{ github.event.inputs.api-base-url }}'
