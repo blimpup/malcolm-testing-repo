@@ -1,0 +1,5 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['dd', 'if=/dev/random', 'of=/tmp/foo', 'bs=1m', 'count=100000000']
