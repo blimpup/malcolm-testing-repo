@@ -1,0 +1,9 @@
+plan_storage:
+  method: s3
+  url: s3://foo/bar/$token
+hooks:
+  all:
+    pre:
+      - type: env
+        name: AWS_DEFAULT_REGION
+        cmd: ['echo', 'us-east-1']
