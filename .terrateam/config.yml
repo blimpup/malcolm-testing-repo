@@ -1,0 +1,5 @@
+storage:
+  plans:
+    method: s3
+    bucket: foo
+    region: us-east-1
