@@ -1,0 +1,6 @@
+storage:
+  plans:
+    method: s3
+    bucket: terrateam-test-bucket
+    region: us-east-1
+    delete_used_plans: false
