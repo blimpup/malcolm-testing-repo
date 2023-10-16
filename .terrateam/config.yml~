@@ -1,0 +1,3 @@
+plan_storage:
+  method: s3
+  url: s3://foo/bar/$work_token
