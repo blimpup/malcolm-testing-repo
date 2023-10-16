@@ -1,0 +1,4 @@
+plan_storage:
+  method: s3
+  url: s3://foo/bar/$token
+  region: us-east-1
