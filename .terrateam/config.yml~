@@ -1,0 +1,7 @@
+dirs:
+  tf:
+    workspaces:
+      testing:
+        tags: []
+      default:
+        tags: []
