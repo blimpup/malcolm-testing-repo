@@ -1,2 +1,2 @@
-resource "null_resource" "foo-subdir" {
+resource "null_resource" "foo-subdir1" {
 }
