@@ -1,0 +1,7 @@
+workflows:
+  - tag_query: 'dir:tf'
+    cdktf: true
+    plan:
+      - type: run
+        cmd: ['test', '${TERRATEAM_TF_CMD}', '=', 'terraform']
+
