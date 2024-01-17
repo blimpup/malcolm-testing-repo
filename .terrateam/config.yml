@@ -1,0 +1,8 @@
+workflows:
+  - tag_query: 'dir:tf'
+    terraform_version: 1.5.0
+    plan:
+      - type: run
+        cmd: ['test', '${TERRATEAM_TF_CMD}', '=', 'terraform']
+      - type: run
+        cmd: ['bash', '-c', '${TERRATEAM_TF_CMD} --version | grep "Terraform v1\.5\.0"']
