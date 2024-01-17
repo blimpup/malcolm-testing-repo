@@ -1,0 +1,8 @@
+engine:
+  name: terraform
+
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['test', '${TERRATEAM_TF_CMD}', '=', 'terraform']
