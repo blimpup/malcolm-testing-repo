@@ -1,0 +1,7 @@
+engine:
+  name: tofu
+
+workflows:
+  - tag_query: 'dir:tf'
+    engine:
+      name: terraform
