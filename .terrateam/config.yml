@@ -1,3 +1,3 @@
 workflows:
   - tag_query: "dir:tf"
-    lock_policy: merge
+    lock_policy: apply
