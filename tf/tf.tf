@@ -1,3 +1,2 @@
-provisioner "local-exec" {
-  command = "exit 1"
+resource "null_resource" "foo" {
 }
