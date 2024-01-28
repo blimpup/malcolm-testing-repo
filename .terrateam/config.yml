@@ -1,0 +1,32 @@
+engine:
+  name: tofu
+  version: 1.6.0
+
+workflows:
+  - tag_query: 'dir:tf'
+    engine:
+      name: tofu
+      version: 1.6.1
+    plan:
+      - type: init
+      - type: plan
+      - type: run
+        cmd: ['bash', '-c', '${TERRAFOR_CMD} version | grep "1.6.1"']
+    apply:
+      - type: init
+      - type: apply
+      - type: run
+      - type: run
+        cmd: ['bash', '-c', '${TERRAFOR_CMD} version | grep "1.6.1"']
+  - tag_query: 'dir:tf1'
+    plan:
+      - type: init
+      - type: plan
+      - type: run
+        cmd: ['bash', '-c', '${TERRAFOR_CMD} version | grep "1.6.0"']
+    apply:
+      - type: init
+      - type: apply
+      - type: run
+      - type: run
+        cmd: ['bash', '-c', '${TERRAFOR_CMD} version | grep "1.6.0"']
