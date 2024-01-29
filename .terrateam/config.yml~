@@ -1,3 +1,0 @@
-drift:
-  enabled: true
-  schedule: hourly
