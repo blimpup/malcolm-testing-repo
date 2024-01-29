@@ -1,3 +1,15 @@
+hooks:
+  plan:
+    pre:
+      - type: env
+        name: AWS_ACCESS_KEY_ID
+        cmd: ['echo', '$PLAN_ACCESS_KEY_ID']
+      - type: env
+        name: AWS_SECRET_ACCESS_KEY
+        cmd: ['echo', '$PLAN_SECRET_ACCESS_KEY']
+    post:
+      - type: drift_create_issue
+
 drift:
-  enabled: false
+  enabled: true
   schedule: hourly
