@@ -1,5 +1,6 @@
 indexer:
   enabled: true
+  build_tag: "ghcr.io/terrateamio/terrat-code-indexer:749a28aef35a53888e301b7f24e01d56e847d3ac"
 
 when_modified:
   autoplan: false
