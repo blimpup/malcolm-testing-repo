@@ -1,5 +1,5 @@
 indexer:
-  build_tag: "ghcr.io/terrateamio/terrat-code-indexer:e44641e6a48480ed7d523a0bc1789cba3222f3bf"
+  build_tag: "ghcr.io/terrateamio/terrat-code-indexer:8937a22dc0daab69c8384a5f1e365bcb50ddec7e"
 
 when_modified:
   autoplan: false
