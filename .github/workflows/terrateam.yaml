@@ -29,7 +29,7 @@
        - uses: actions/checkout@v3
        - name: Run Terrateam Action
          id: terrateam
-         uses: terrateamio/action@pro-457-add-indexer
+         uses: terrateamio/action@pro-475-fix-workspaces-integration
          with:
            work-token: '${{ github.event.inputs.work-token }}'
            api-base-url: '${{ github.event.inputs.api-base-url }}'
