@@ -3,3 +3,7 @@ when_modified:
   autoplan: true
   autoplan_draft_pr: true
   autoapply: false
+
+indexer:
+    enabled: true
+
