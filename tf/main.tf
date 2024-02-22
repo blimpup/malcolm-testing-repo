@@ -1,4 +1,3 @@
-foo "bar" {
+module "foo" {
+  source = "./modules/foo"
 }
-
-module "bar" {
