@@ -5,6 +5,3 @@ apply_requirements:
       count: 1
 when_modified:
   autoplan: false
-
-indexer:
-  enabled: true
