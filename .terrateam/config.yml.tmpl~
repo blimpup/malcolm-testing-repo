@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+cat << EOF >"$1"
+access_control:
+  enabled: true
+  terrateam_config_update: ['user:$TERRAT_USERNAME']
+EOF
