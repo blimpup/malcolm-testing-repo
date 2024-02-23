@@ -7,6 +7,3 @@ hooks:
     pre:
       - type: run
         cmd: ['test', '-n', '']
-
-indexer:
-  enabled: true
