@@ -5,3 +5,7 @@ dirs:
   tf:
     when_modified:
       file_patterns: ['tf/**.tf', 'modules/**', '!modules/ignore/*.tf']
+
+indexer:
+    enabled: true
+
