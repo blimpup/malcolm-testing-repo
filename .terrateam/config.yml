@@ -1,3 +1,7 @@
 when_modified:
   autoplan: false
   autoapply: true
+
+indexer:
+    enabled: true
+
