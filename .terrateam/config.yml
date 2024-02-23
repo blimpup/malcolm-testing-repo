@@ -1,5 +1,3 @@
-access_control:
-  enabled: true
-  policies:
-    - tag_query: ""
-      plan: ['repo:admin']
+drift:
+  enabled: false
+  schedule: hourly
