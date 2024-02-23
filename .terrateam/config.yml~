@@ -3,6 +3,3 @@ apply_requirements:
     approved:
       enabled: true
       count: 1
-
-indexer:
-  enabled: true
