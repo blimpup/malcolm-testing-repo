@@ -1,5 +1,2 @@
 access_control:
   enabled: true
-
-indexer:
-    enabled: true
