@@ -1,5 +1,2 @@
-access_control:
-  enabled: true
-  policies:
-    - tag_query: ""
-      apply: ['repo:triage']
+when_modified:
+  autoplan: false
