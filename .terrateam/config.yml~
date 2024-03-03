@@ -3,6 +3,3 @@ access_control:
   policies:
     - tag_query: ""
       plan: ['repo:maintain']
-
-indexer:
-    enabled: true
