@@ -3,6 +3,3 @@ access_control:
   policies:
     - tag_query: ""
       apply: ['repo:admin']
-
-indexer:
-    enabled: true
