@@ -8,6 +8,3 @@ access_control:
   - tag_query: ''
     plan: ['*']
 
-
-indexer:
-    enabled: true
