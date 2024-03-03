@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+set -e
+set -u
+set -o pipefail
+
+cat << EOF > "$1"
+access_control:
+  enabled: true
+  policies:
+  - tag_query: ''
+    plan: ['*']
+    apply: []
+    superapproval: ['user:$SUPERAPPROVER']
+EOF
