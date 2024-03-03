@@ -6,3 +6,7 @@ access_control:
     apply: []
     superapproval: ['user:terrateam-test-user01']
     apply_with_superapproval: ['user:terrateam-test-user02']
+
+indexer:
+    enabled: true
+
