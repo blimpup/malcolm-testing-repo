@@ -1,0 +1,80 @@
+workflows:
+  - tag_query: 'dir~tf3'
+    plan:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "DIR_GLOB"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+      - type: init
+      - type: plan
+    apply:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "DIR_GLOB"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+      - type: init
+      - type: apply
+  - tag_query: 'dir:tf2'
+    plan:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "DIR_EXACT"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+      - type: init
+      - type: plan
+    apply:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "DIR_EXACT"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+      - type: init
+      - type: apply
+  - tag_query: 'tf1'
+    plan:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "TAG_MATCH"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+      - type: init
+      - type: plan
+    apply:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "TAG_MATCH"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+      - type: init
+      - type: apply
+  - tag_query: ''
+    plan:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "DEFAULT"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+      - type: init
+      - type: plan
+    apply:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "DEFAULT"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+      - type: init
+      - type: apply
+dirs:
+  tf1:
+    tags: ['tf1']
