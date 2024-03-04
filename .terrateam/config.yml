@@ -1,0 +1,7 @@
+storage:
+  plans:
+    method: s3
+    bucket: "$PLAN_STORAGE_BUCKET"
+    access_key_id: "$PLAN_ACCESS_KEY_ID"
+    secret_access_key: "$PLAN_SECRET_ACCESS_KEY"
+    region: us-east-1
