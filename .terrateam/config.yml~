@@ -6,6 +6,3 @@ hooks:
 drift:
   enabled: true
   schedule: hourly
-
-indexer:
-  enabled: true
