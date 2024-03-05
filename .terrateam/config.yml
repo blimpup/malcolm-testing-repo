@@ -1,0 +1,7 @@
+hooks:
+  plan:
+    pre:
+      - type: run
+        cmd: ['/gcloud-cli-setup.sh']
+      - type: run
+        cmd: ['which', 'gcloud']
