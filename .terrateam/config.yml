@@ -1,0 +1,5 @@
+hooks:
+  pre:
+    plan:
+      - type: run
+        cmd: ['echo', '${PATH}']
