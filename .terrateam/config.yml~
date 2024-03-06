@@ -1,0 +1,4 @@
+hooks:
+  pre:
+    - type: run
+      cmd: ['echo', '${PATH}']
