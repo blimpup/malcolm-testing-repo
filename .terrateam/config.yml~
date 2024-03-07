@@ -1,4 +1,0 @@
-drift:
-  enabled: true
-  schedule: hourly
-  tag_query: 'dir:tf'
