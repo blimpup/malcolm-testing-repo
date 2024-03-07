@@ -1,5 +1,3 @@
 drift:
-  enabled: true
+  enabled: false
   schedule: hourly
-  reconcile: true
-  tag_query: 'dir:tf'
