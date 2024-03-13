@@ -1,5 +1,2 @@
-workflows: []
-
 indexer:
-    enabled: true
-
+  enabled: true
