@@ -1,2 +1,3 @@
 indexer:
   enabled: true
+  build_tag: "ghcr.io/terrateamio/terrat-code-indexer:f1bbc21c6ff02473aab5c55ec7d8e7873303ebc6"
