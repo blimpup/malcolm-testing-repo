@@ -1,2 +1,9 @@
 indexer:
   enabled: true
+  build_tag: "ghcr.io/terrateamio/terrat-code-indexer:5d1d8b5c0c7524ce2911a6415e12105e689c4e75"
+
+hooks:
+  plan:
+    pre:
+      - type: run
+        cmd: ['ls', '-lR']
