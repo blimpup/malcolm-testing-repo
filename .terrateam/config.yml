@@ -1,0 +1,7 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['pip', 'install', 'pipenv']
+      - type: run
+        cmd: ['pipenv', '--help']
