@@ -34,5 +34,4 @@
            work-token: '${{ github.event.inputs.work-token }}'
            api-base-url: '${{ github.event.inputs.api-base-url }}'
          env:
-           SECRETS_CONTEXT: ${{ toJson(secrets) }}
-           TF_VAR_BAR_BAZ: FOO
+           SECRETS_CONTEXT: '{"TF_VAR_BAR_BAZ": "FOO"}'
