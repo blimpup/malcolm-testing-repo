@@ -1,0 +1,21 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['pip', 'install', 'pipenv']
+
+workflows:
+  - tag_query: cdktf
+    engine:
+      name: cdktf
+
+dirs:
+  '**/main.py':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.py']
+    # stacks:
+    #   'cdktf-stack1':
+    #     tags: []
+    #   'cdktf-stack2':
+    #     tags: []
