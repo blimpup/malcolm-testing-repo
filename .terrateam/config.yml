@@ -1,0 +1,36 @@
+hooks:
+  all:
+    pre:
+      - type: env
+        name: PIPENV_CACHE_DIR
+        cmd: ['echo', '/tmp/pipenv']
+      - type: env
+        name: XDG_CACHE_HOME
+        cmd: ['echo', '/tmp/xdg_cache_home']
+      - type: env
+        name: XDG_DATA_HOME
+        cmd: ['echo', '/tmp/xdg_data_home']
+      - type: env
+        name: XDG_CONFIG_HOME
+        cmd: ['echo', '/tmp/xdg_config_home']
+      - type: run
+        cmd: ['pip', 'install', 'pipenv']
+
+workflows:
+  - tag_query: cdktf
+    engine:
+      name: cdktf
+    plan:
+      - type: run
+        cmd: ['npx', '--yes', 'cdktf-cli@latest', 'plan']
+
+dirs:
+  '**/main.py':
+    tags: [cdktf]
+    when_modified:
+      file_patterns: ['${DIR}/*.py']
+    # stacks:
+    #   'cdktf-stack1':
+    #     tags: []
+    #   'cdktf-stack2':
+    #     tags: []
