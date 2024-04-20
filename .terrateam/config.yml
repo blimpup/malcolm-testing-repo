@@ -1,0 +1,6 @@
+indexer:
+  enabled: true
+
+tags:
+  branch:
+    foo: '('
