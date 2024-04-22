@@ -1,0 +1,10 @@
+hooks:
+  all:
+    pre:
+      - type: env
+        name: 'RESOURCELY_EVALUATE_DRY_RUN'
+        cmd: ['echo', 'true']
+
+integrations:
+  resourcely:
+    enabled: true
