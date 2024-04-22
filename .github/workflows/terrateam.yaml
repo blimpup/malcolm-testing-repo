@@ -17,10 +17,6 @@
          required: true
        api-base-url:
          description: 'API Base URL'
-       environment:
-         description: 'Environment to run test on'
-         type: environment
-         default: development
  jobs:
    terrateam:
      permissions: # Required to pass credentials to the Terrateam action
