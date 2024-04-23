@@ -17,9 +17,6 @@
          required: true
        api-base-url:
          description: 'API Base URL'
-       environment:
-         description: 'Environment to run test on'
-         type: environment
  jobs:
    terrateam:
      permissions: # Required to pass credentials to the Terrateam action
@@ -27,7 +24,6 @@
        contents: read
      runs-on: ubuntu-latest
      timeout-minutes: 1440
-     environment: '${{ github.event.inputs.environment }}'
      name: Terrateam Action
      steps:
        - uses: actions/checkout@v3
