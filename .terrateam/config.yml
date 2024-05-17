@@ -1,6 +1,5 @@
 apply_requirements:
   checks:
-    - tag_query: ""
+    - tag_query: and
       approved:
-        all_of: ['foo']
         enabled: true
