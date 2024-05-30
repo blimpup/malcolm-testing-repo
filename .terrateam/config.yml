@@ -1,5 +1,8 @@
-access_control:
+indexer:
   enabled: true
-  policies:
-    - tag_query: ""
-      plan: ['repo:admin']
+
+apply_requirements:
+  checks:
+    approved:
+      enabled: true
+      count: 1
