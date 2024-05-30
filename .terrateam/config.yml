@@ -1,3 +1,4 @@
 drift:
-  enabled: true
+  enabled: false
   schedule: hourly
+  reconcile: true
