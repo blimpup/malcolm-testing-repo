@@ -1,0 +1,15 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['sh', '-c', 'exit 1']
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "ENVIRONMENT"]
+        capture_output: true
+        run_on: failure
+
+workflows:
+  - tag_query: 'dir:tf1'
+    environment: development
+  - tag_query: 'dir:tf2'
+    environment: production
