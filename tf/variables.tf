@@ -1,3 +1,0 @@
-variable "bar" {
-  type = string
-}
