@@ -1,0 +1,17 @@
+engine:
+  name: terraform
+
+workflows:
+  - tag_query: 'dir:tf'
+    engine:
+      name: tofu
+    plan:
+      - type: init
+      - type: plan
+      - type: run
+        cmd: ['test', '${TERRATEAM_TF_CMD}', '=', 'tofu']
+    apply:
+      - type: init
+      - type: apply
+      - type: run
+        cmd: ['test', '${TERRATEAM_TF_CMD}', '=', 'tofu']
