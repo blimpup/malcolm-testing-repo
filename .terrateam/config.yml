@@ -1,0 +1,4 @@
+apply_requirements:
+  checks:
+    - tag_query: ''
+      all_of: ['foo:bar']
