@@ -1,0 +1,8 @@
+indexer:
+  enabled: true
+
+workflows:
+  - tag_query: 'dir:tf1'
+    environment: development
+  - tag_query: 'dir:tf2'
+    environment: production
