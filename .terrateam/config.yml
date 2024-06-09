@@ -1,5 +1,0 @@
-apply_requirements:
-  checks:
-    - tag_query: and
-      approved:
-        enabled: true
