@@ -1,0 +1,7 @@
+indexer:
+  enabled: true
+
+access_control:
+  enabled: true
+  policies:
+    - tag_query: 'and and'
