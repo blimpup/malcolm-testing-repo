@@ -1,0 +1,5 @@
+indexer:
+  enabled: true
+
+when_modified:
+  file_patterns: ['$bam']
