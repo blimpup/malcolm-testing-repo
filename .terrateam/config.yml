@@ -1,5 +1,0 @@
-access_control:
-  enabled: false
-  policies:
-    - tag_query: ''
-      plan: []
