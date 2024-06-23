@@ -1,6 +1,2 @@
-apply_requirements:
-  checks:
-    - tag_query: ""
-      approved:
-        all_of: ['foo']
-        enabled: true
+access_control:
+  enabled: false
