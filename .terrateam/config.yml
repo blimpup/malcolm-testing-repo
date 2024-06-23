@@ -2,4 +2,4 @@ access_control:
   enabled: true
   policies:
     - tag_query: ""
-      apply: ['repo:admin']
+      plan: ['repo:maintain']
