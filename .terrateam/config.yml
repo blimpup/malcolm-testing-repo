@@ -1,2 +1,5 @@
-when_modified:
-  autoplan: false
+apply_requirements:
+  checks:
+    approved:
+      enabled: true
+      count: 1
