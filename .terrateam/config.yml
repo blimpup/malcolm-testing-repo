@@ -3,6 +3,7 @@ indexer:
 
 apply_requirements:
   checks:
-    - tag_query: and
+    - tag_query: ""
       approved:
+        all_of: ['foo']
         enabled: true
