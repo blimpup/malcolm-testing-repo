@@ -1,9 +1,2 @@
 indexer:
   enabled: true
-
-apply_requirements:
-  checks:
-    - tag_query: ""
-      approved:
-        enabled: true
-        any_of: ["user:terrateam-test-user01"]
