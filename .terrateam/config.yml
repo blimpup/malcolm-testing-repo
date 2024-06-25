@@ -1,5 +1,1 @@
-indexer:
-    enabled: true
-
-when_modified:
-  autoplan: false
+workflows: []
