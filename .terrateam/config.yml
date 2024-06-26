@@ -1,0 +1,107 @@
+dirs:
+  gcp/production:
+    tags: ["gcp", "production"]
+    when_modified:
+      file_patterns: ["${DIR}/*.tf"]
+  gcp/staging:
+    tags: ["gcp", "staging"]
+    when_modified:
+      file_patterns: ["${DIR}/*.tf"]
+
+workflows:
+  - tag_query: "gcp and production"
+    plan:
+      - type: env
+        name: TF_VAR_instance_name
+        cmd: ['echo', '$TF_VAR_production_instance_name']
+      - type: oidc
+        provider: gcp
+        service_account: "terrateam@terrateam-sandbox.iam.gserviceaccount.com"
+        workload_identity_provider: "projects/811565105692/locations/global/workloadIdentityPools/terrateam-pool/providers/terrateam-provider"
+      - type: init
+      - type: plan
+      - type: run
+        cmd: ['cat', '$TERRATEAM_PLAN_FILE']
+    apply:
+      - type: oidc
+        provider: gcp
+        service_account: "terrateam@terrateam-sandbox.iam.gserviceaccount.com"
+        workload_identity_provider: "projects/811565105692/locations/global/workloadIdentityPools/terrateam-pool/providers/terrateam-provider"
+      - type: init
+      - type: apply
+  - tag_query: "gcp and staging"
+    plan:
+      - type: env
+        name: TF_VAR_instance_name
+        cmd: ['echo', '$TF_VAR_staging_instance_name']
+      - type: oidc
+        provider: gcp
+        service_account: "terrateam@terrateam-sandbox.iam.gserviceaccount.com"
+        workload_identity_provider: "projects/811565105692/locations/global/workloadIdentityPools/terrateam-pool/providers/terrateam-provider"
+      - type: init
+      - type: plan
+    apply:
+      - type: oidc
+        provider: gcp
+        service_account: "terrateam@terrateam-sandbox.iam.gserviceaccount.com"
+        workload_identity_provider: "projects/811565105692/locations/global/workloadIdentityPools/terrateam-pool/providers/terrateam-provider"
+      - type: init
+      - type: apply
+  - tag_query: ""
+    plan:
+      - type: init
+      - type: plan
+    apply:
+      - type: init
+      - type: apply
+
+# RBAC
+access_control:
+  terrateam_config_update: ['team:sre']
+  policies:
+    - tag_query: ""
+      plan: ["team:engineering"]
+      apply: ["team:sre"]
+      apply_force: ["team:sre"]
+      apply_autoapprove: ['user:joshpollara']
+      apply_with_superapproval: ['user:terrateam-demo-user']
+      superapproval: ['user:joshpollara']
+
+  
+# automerge
+automerge:
+  enabled: true
+  delete_branch: false
+
+# engine
+engine:
+  name: tofu
+  version: 1.7.2
+
+# parallel runs
+parallel_runs: 3
+
+# cost estimation
+cost_estimation:
+  enabled: false
+
+integrations:
+  resourcely:
+    enabled: false
+
+indexer:
+  enabled: false
+  
+apply_requirements:
+  checks:
+    status_checks:
+      enabled: false
+      ignore_matching: []
+  create_pending_apply_check: true
+
+when_modified:
+  autoapply: true
+
+engine:
+  name: tofu
+  version: "1.7.2
