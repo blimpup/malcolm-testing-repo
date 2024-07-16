@@ -6,11 +6,11 @@ dirs:
       workspace1:
         tags: [workspace1]
         when_modified:
-          autoplan: true
+          file_patterns: ['${DIR}/*.tf', '${DIR}/*.tfvars', '!${DIR}/workspace2.tfvars']
       workspace2:
         tags: [workspace2]
         when_modified:
-          autoplan: false
+          file_patterns: ['${DIR}/*.tf', '${DIR}/*.tfvars', '!${DIR}/workspace1.tfvars']
 workflows:
   - tag_query: tf workspace1
     plan:
