@@ -1,2 +1,2 @@
-when_modified:
-  autoplan: false
+indexer:
+  enabled: true
