@@ -1,0 +1,10 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['oci', '--help']
+        capture_output: true
+      - type: run
+        cmd: ['exit', '1']
+      - type: init
+      - type: plan
