@@ -1,7 +1,5 @@
 access_control:
   enabled: true
-  terrateam_config_update: ['team:terrateam-test-team01']
   policies:
-  - tag_query: ''
-    plan: ['*']
-    apply: ['*']
+    - tag_query: ""
+      plan: ['repo:admin']
