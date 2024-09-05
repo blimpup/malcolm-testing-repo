@@ -3,3 +3,5 @@ apply_requirements:
     approved:
       enabled: true
       count: 1
+when_modified:
+  autoplan: false
