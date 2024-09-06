@@ -1,0 +1,20 @@
+tags:
+  branch:
+    main: main
+    test: ^test/%d+%-%d+%-%d+%-%d+%-%d+$
+
+workflows:
+  - tag_query: "branch:test"
+    plan:
+      - type: init
+      - type: plan
+    apply:
+      - type: init
+      - type: apply
+  - tag_query: ""
+    plan:
+      - type: run
+        cmd: ['false']
+    apply:
+      - type: run
+        cmd: ['false']
