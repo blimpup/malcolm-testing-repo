@@ -1,0 +1,10 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+      - type: plan
+    apply:
+      - type: init
+      - type: apply
+
+
