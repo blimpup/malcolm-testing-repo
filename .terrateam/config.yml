@@ -1,0 +1,13 @@
+tags:
+  branch:
+    main: main
+    test: test
+
+workflows:
+  - tag_query: "branch:test"
+    plan:
+      - type: init
+      - type: plan
+    apply:
+      - type: init
+      - type: apply
