@@ -1,10 +1,5 @@
-indexer:
-  enabled: true
-
-apply_requirements:
-  checks:
-    approved:
-      enabled: true
-      count: 1
 when_modified:
   autoplan: false
+
+indexer:
+  enabled: true
