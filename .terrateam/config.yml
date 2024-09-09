@@ -1,2 +1,7 @@
 access_control:
-  enabled: false
+  enabled: true
+  terrateam_config_update: []
+
+
+indexer:
+    enabled: true
