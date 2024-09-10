@@ -1,0 +1,5 @@
+indexer:
+  enabled: true
+
+workflows:
+  - tag_query: 'and and'
