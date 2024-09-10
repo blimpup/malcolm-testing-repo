@@ -1,0 +1,7 @@
+indexer:
+  enabled: true
+
+apply_requirements:
+  checks:
+    - tag_query: 'and and'
+
