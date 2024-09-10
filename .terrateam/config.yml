@@ -1,0 +1,6 @@
+indexer:
+  enabled: true
+
+access_control:
+  enabled: true
+  unlock: ['foo:bar']
