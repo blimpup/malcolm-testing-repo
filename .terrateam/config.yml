@@ -1,0 +1,27 @@
+storage:
+  plans:
+    method: s3
+    bucket: "$PLAN_STORAGE_BUCKET"
+    access_key_id: "$ACCESS_KEY_ID"
+    secret_access_key: "$SECRET_ACCESS_KEY"
+    region: us-east-1
+workflows:
+  - tag_query: ''
+    plan:
+      - type: env
+        name: ACCESS_KEY_ID
+        cmd: ['echo', '$PLAN_ACCESS_KEY_ID']
+      - type: env
+        name: SECRET_ACCESS_KEY
+        cmd: ['echo', '$PLAN_SECRET_ACCESS_KEY']
+      - type: init
+      - type: plan
+    apply:
+      - type: env
+        name: ACCESS_KEY_ID
+        cmd: ['echo', '$PLAN_ACCESS_KEY_ID']
+      - type: env
+        name: SECRET_ACCESS_KEY
+        cmd: ['echo', '$PLAN_SECRET_ACCESS_KEY']
+      - type: init
+      - type: apply
