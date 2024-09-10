@@ -1,0 +1,5 @@
+apply_requirements:
+  checks:
+    - tag_query: ''
+      approved:
+        any_of: ['foo:bar']
