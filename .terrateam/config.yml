@@ -1,4 +1,5 @@
-drift:
-  enabled: false
-  schedule: hourly
-  reconcile: true
+apply_requirements:
+  checks:
+    approved:
+      enabled: true
+      count: 1
