@@ -1,0 +1,8 @@
+config_builder:
+  enabled: true
+  script: |
+    echo '{"access_control": {"enabled": false}}'
+
+access_control:
+  enabled: true
+  
