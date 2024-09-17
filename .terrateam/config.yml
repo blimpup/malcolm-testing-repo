@@ -1,6 +1,7 @@
 config_builder:
   enabled: true
   script: |
+    #! /usr/bin/env bash
     echo '{"access_control": {"enabled": false}}'
 
 access_control:
