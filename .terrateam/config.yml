@@ -1,5 +1,4 @@
-access_control:
+drift:
   enabled: false
-  policies:
-    - tag_query: ''
-      plan: []
+  schedule: hourly
+  reconcile: true
