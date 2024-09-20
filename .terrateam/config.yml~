@@ -1,6 +1,3 @@
-indexer:
-  enabled: true
-
 dirs:
   tf:
     create_and_select_workspace: false
