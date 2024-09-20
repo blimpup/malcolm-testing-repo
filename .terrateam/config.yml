@@ -1,0 +1,3 @@
+drift:
+  tag_query: 'and and'
+  schedule: weekly
