@@ -1,0 +1,24 @@
+indexer:
+  enabled: true
+  
+tags:
+  branch:
+    test: test
+  dest_branch:
+    main: '^main$'
+
+workflows:
+  - tag_query: "dest_branch:main and branch:test"
+    plan:
+      - type: init
+      - type: plan
+    apply:
+      - type: init
+      - type: apply
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['exit', '1']
+    apply:
+      - type: run
+        cmd: ['exit', '1']
