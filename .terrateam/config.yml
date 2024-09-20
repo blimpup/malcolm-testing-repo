@@ -3,8 +3,7 @@ indexer:
 
 apply_requirements:
   checks:
-    approved:
-      enabled: true
-      count: 1
-when_modified:
-  autoplan: false
+    - tag_query: ""
+      approved:
+        enabled: true
+        all_of: ["user:terrateam-test-user01"]
