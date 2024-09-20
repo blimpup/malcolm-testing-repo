@@ -1,0 +1,7 @@
+indexer:
+  enabled: true
+
+dirs:
+  database:
+    when_modified:
+      depends_on: 'dir:base'
