@@ -1,0 +1,9 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+      - type: plan
+        mode: 'fast-and-loose'
+    apply:
+      - type: init
+      - type: apply
