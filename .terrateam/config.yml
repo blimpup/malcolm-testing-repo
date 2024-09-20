@@ -3,3 +3,6 @@ access_control:
   policies:
     - tag_query: ""
       plan: ['repo:triage']
+
+indexer:
+    enabled: true
