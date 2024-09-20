@@ -1,0 +1,2 @@
+workflows:
+  - tag_query: 'and and'
