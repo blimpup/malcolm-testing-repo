@@ -1,3 +1,3 @@
 access_control:
   enabled: true
-  ci_config_update: []
+  ci_config_change: []
