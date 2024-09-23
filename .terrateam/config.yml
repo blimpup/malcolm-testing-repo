@@ -2,4 +2,4 @@ config_builder:
   enabled: true
   script: |
     #! /usr/bin/env bash
-    python3 ${TERRATEAM_ROOT}/bin/deps
+    ${TERRATEAM_ROOT}/bin/deps
