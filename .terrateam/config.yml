@@ -1,5 +1,3 @@
-config_builder:
+access_control:
   enabled: true
-  script: |
-    #! /usr/bin/env bash
-    terrateam-aux-repo-config
+  ci_config_update: []

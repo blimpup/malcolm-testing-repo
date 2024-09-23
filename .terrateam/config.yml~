@@ -1,5 +1,3 @@
-config_builder:
+access_control:
   enabled: true
-  script: |
-    #! /usr/bin/env bash
-    ${TERRATEAM_ROOT}/bin/deps
+  terrateam_config_update: []
