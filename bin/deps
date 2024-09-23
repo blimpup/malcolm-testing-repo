@@ -17,6 +17,6 @@ for d in repo_config.get('dirs', {}):
     if d in dep_dirs:
         deps_list = dep_dirs[d].get('deps', [])
         depends_on = ' or '.join(['dir:' + dir for dir in deps_list])
-        repo_config[d].setdefault('when_modified', {})['depends_on'] = depends_on
+        repo_config.setdefault('dirs', {})[d].setdefault('when_modified', {})['depends_on'] = depends_on
 
 print(json.dumps(repo_config, indent=2))
