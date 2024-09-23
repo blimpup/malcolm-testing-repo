@@ -3,9 +3,3 @@ indexer:
 
 access_control:
   enabled: true
-  files:
-    other_files/README.md: ['user:terrateam-test-user01']
-  policies:
-  - tag_query: ''
-    plan: ['*']
-    apply: ['*']
