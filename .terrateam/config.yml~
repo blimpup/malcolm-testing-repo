@@ -1,0 +1,7 @@
+dirs:
+  tf:
+    workspaces:
+      foo:
+        tags: [foo]
+      bar:
+        tags: [bar]
