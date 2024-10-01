@@ -1,2 +1,5 @@
-when_modified:
-  autoplan: false
+access_control:
+  enabled: false
+  policies:
+    - tag_query: ''
+      plan: []
