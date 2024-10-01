@@ -1,7 +1,5 @@
-drift:
-  enabled: true
-  schedule: hourly
-  reconcile: true
-
-indexer:
-  enabled: true
+apply_requirements:
+  checks:
+    approved:
+      enabled: true
+      count: 1
