@@ -1,5 +1,8 @@
-access_control:
-  enabled: false
-  policies:
-    - tag_query: ''
-      plan: []
+indexer:
+  enabled: true
+
+apply_requirements:
+  checks:
+    approved:
+      enabled: true
+      count: 1
