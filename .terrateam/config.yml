@@ -1,0 +1,11 @@
+indexer:
+  enabled: true
+
+hooks:
+  all:
+    pre:
+      - type: env
+        method: source
+        cmd: ['./bin/env']
+        sensitive:
+          - 'RESOURCE'
