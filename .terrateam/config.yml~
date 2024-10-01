@@ -1,0 +1,7 @@
+hooks:
+  all:
+    pre:
+      - type: env
+        name: 'DUMMY'
+        cmd: ['echo', 'null_resource']
+        sensitive: true
