@@ -1,0 +1,5 @@
+access_control:
+  enabled: true
+  policies:
+    - tag_query: ''
+      apply: ['foo:bar']
