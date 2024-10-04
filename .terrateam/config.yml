@@ -1,11 +1,4 @@
-config_builder:
-  enabled: true
-  script: |
-    #! /usr/bin/env bash
-    echo '{"access_control": {"enabled": false}}'
-
-access_control:
-  enabled: true
-  policies:
-    - tag_query: ''
-      plan: []
+drift:
+  enabled: false
+  schedule: hourly
+  reconcile: true
