@@ -1,4 +1,12 @@
 drift:
-  enabled: false
+  enabled: true
   schedule: hourly
   reconcile: true
+hooks:
+  apply:
+    pre:
+      - type: run
+        cmd: ['test', '-n', '']
+
+indexer:
+  enabled: true
