@@ -1,0 +1,30 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: env
+        method: source
+        cmd: ["${TERRATEAM_ROOT}/set-bar-baz", "FOO", "ZOOM"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+        run_on: always
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAZ"]
+        capture_output: true
+        run_on: always
+      - type: init
+      - type: plan
+    apply:
+      - type: env
+        method: source
+        cmd: ["${TERRATEAM_ROOT}/set-bar-baz", "FOO", "ZOOM"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+        run_on: always
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAZ"]
+        capture_output: true
+        run_on: always
+      - type: init
+      - type: apply
