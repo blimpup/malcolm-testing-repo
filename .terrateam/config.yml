@@ -1,5 +1,9 @@
-indexer:
-  enabled: true
-
-when_modified:
-  autoplan: false
+dirs:
+  ".":
+    when_modified:
+      file_patterns:
+        - "subdir/**/*.tf"
+        - "./*.tf"
+  "subdir/**":
+    when_modified:
+      file_patterns: []
