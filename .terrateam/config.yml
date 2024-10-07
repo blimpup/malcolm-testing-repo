@@ -1,5 +1,5 @@
-indexer:
+config_builder:
   enabled: true
-
-when_modified:
-  autoplan: false
+  script: |
+    #! /usr/bin/env bash
+    echo '{}'
