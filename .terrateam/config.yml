@@ -3,3 +3,6 @@ config_builder:
   script: |
     #! /usr/bin/env bash
     echo '{}'
+
+when_modified:
+  autoplan: false
