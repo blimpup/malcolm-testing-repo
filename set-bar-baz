@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+bar_value="$1"
+baz_value="$2"
+
+printf "BAR=$bar_value\0"
+# export BAR="$bar_value"
+export BAZ="$baz_value"
