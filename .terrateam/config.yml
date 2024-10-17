@@ -1,0 +1,14 @@
+indexer:
+  enabled: true
+
+hooks:
+  all:
+    pre:
+      - type: env
+        name: NOT_SENSITIVE
+        cmd: ['echo', 'resource']
+      - type: env
+        method: source
+        cmd: ['./bin/env']
+        sensitive:
+          - 'RESOURCE'
