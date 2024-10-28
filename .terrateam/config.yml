@@ -1,0 +1,22 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        label: "Echo string"
+        cmd: ["echo", "FOO"]
+        capture_output: true
+      - type: run
+        label: "Fail run"
+        cmd: ["false"]
+        capture_output: true
+      - type: init
+      - type: plan
+    apply:
+      - type: run
+        cmd: ["echo", "FOO"]
+        capture_output: true
+      - type: run
+        cmd: ["false"]
+        capture_output: true
+      - type: init
+      - type: apply
