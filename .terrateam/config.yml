@@ -1,0 +1,26 @@
+dirs:
+  tf:
+    create_and_select_workspace: false
+    tags: [tf]
+    workspaces:
+      workspace1:
+        tags: [workspace1]
+        when_modified:
+          file_patterns: ['${DIR}/*.tf', '${DIR}/*.tfvars', '!${DIR}/workspace2.tfvars']
+      workspace2:
+        tags: [workspace2]
+        when_modified:
+          file_patterns: ['${DIR}/*.tf', '${DIR}/*.tfvars', '!${DIR}/workspace1.tfvars']
+workflows:
+  - tag_query: tf workspace1
+    plan:
+      - type: init
+        extra_args: ["-backend-config=backend-workspace1.conf"]
+      - type: plan
+        extra_args: ["-var-file=workspace1.tfvars"]
+  - tag_query: tf workspace2
+    plan:
+      - type: init
+        extra_args: ["-backend-config=backend-workspace2.conf"]
+      - type: plan
+        extra_args: ["-var-file=workspace2.tfvars"]
