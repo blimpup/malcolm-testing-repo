@@ -1,0 +1,13 @@
+dirs:
+  '**/*.tf':
+    tags: [bar]
+  'tf':
+    when_modified:
+      autoplan: true
+    create_and_select_workspace: true
+    tags: [phoenix]
+    workspaces:
+      eu:
+        tags: [eu]
+      uk:
+        tags: [uk]
