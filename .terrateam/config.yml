@@ -1,5 +1,5 @@
 apply_requirements:
   checks:
-    approved:
-      enabled: true
-      count: 1
+    - tag_query: and
+      approved:
+        enabled: true
