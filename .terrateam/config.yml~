@@ -1,2 +1,5 @@
-when_modified:
-  autoplan: false
+access_control:
+  enabled: true
+  policies:
+    - tag_query: ""
+      plan: ['repo:admin']

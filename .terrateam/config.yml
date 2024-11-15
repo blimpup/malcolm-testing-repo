@@ -1,8 +1,7 @@
-config_builder:
+access_control:
   enabled: true
-  script: |
-    #! /usr/bin/env bash
-    echo '{}'
-
-when_modified:
-  autoplan: false
+  policies:
+    - tag_query: "dir:tf"
+      plan: ['repo:admin']
+    - tag_query: "dir:tf1"
+      plan: ['*']
