@@ -1,7 +1,0 @@
-access_control:
-  enabled: true
-  policies:
-    - tag_query: "dir:tf"
-      plan: ['repo:admin']
-    - tag_query: "dir:tf1"
-      plan: ['*']
