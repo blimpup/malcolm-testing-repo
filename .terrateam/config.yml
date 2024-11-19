@@ -1,6 +1,10 @@
 apply_requirements:
   checks:
-    - tag_query: ""
+    - tag_query: "dir:tf1"
       approved:
         enabled: true
         all_of: ["user:terrateam-test-user02"]
+    - tag_query: "dir:tf2"
+      approved:
+        enabled: true
+        all_of: ["user:terrateam-test-user01"]
