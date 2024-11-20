@@ -20,3 +20,7 @@ workflows:
         extra_args: ["-backend-config=backend-workspace2.conf"]
       - type: plan
         extra_args: ["-var-file=workspace2.tfvars"]
+
+indexer:
+    enabled: true
+
