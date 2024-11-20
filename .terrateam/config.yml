@@ -1,0 +1,3 @@
+access_control:
+  policies:
+    - tag_query: '()'
