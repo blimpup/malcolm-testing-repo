@@ -1,2 +1,7 @@
 indexer:
   enabled: true
+
+dirs:
+  tf_blank:
+    when_modified:
+      file_patterns: []
