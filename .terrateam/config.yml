@@ -2,4 +2,4 @@ access_control:
   enabled: true
   policies:
     - tag_query: ""
-      apply: ['repo:write']
+      plan: ['repo:write']
