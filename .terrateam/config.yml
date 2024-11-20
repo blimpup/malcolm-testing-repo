@@ -1,5 +1,5 @@
 indexer:
   enabled: true
 
-when_modified:
-  autoplan: false
+apply_requirements:
+  create_completed_apply_check_on_noop: true
