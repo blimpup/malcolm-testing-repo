@@ -1,0 +1,10 @@
+when_modified:
+  autoplan: false
+
+dirs:
+  tf/**/modules/**:
+    when_modified:
+      file_patterns: []
+  tf/**/envs/**/*.tf:
+    when_modified:
+      file_patterns: ["${DIR}/*.tf", "${DIR}/../../modules/*.tf"]
