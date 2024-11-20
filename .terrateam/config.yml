@@ -1,3 +1,9 @@
+workflows:
+  - tag_query: 'dir:tf1'
+    environment: production
+  - tag_query: 'dir:tf2'
+    environment: development
+
 drift:
-  enabled: false
+  enabled: true
   schedule: hourly
