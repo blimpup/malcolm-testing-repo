@@ -1,3 +1,6 @@
 drift:
-  enabled: false
+  enabled: true
   schedule: hourly
+
+indexer:
+  enabled: true
