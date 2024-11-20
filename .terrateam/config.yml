@@ -1,7 +1,4 @@
 access_control:
   enabled: true
-  ci_config_update: ['user:terrateam-test-user01']
-  policies:
-  - tag_query: ''
-    plan: ['*']
-    apply: ['*']
+  files:
+    other_files/README.md: []
