@@ -5,7 +5,7 @@
  #
  # Looking for the Terrateam configuration file? .terrateam/config.yml.
  #
- # See https://terrateam.io/docs/configuration for details
+ # See https://docs.terrateam.io/configuration/overview for details
  ##########################################################################
  name: 'Terrateam Workflow'
  on:
@@ -31,7 +31,7 @@
          id: terrateam
          uses: terrateamio/action@pro-371-refactor-phase-1-large-outputs
          with:
-           work-token: '${{ github.event.inputs.work-token }}'
            api-base-url: '${{ github.event.inputs.api-base-url }}'
+           work-token: '${{ github.event.inputs.work-token }}'
          env:
            SECRETS_CONTEXT: ${{ toJson(secrets) }}
