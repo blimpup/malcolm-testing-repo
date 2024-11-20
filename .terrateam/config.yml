@@ -3,4 +3,8 @@ indexer:
 
 access_control:
   enabled: true
-  ci_config_update: []
+  ci_config_update: ['user:terrateam-test-user01']
+  policies:
+  - tag_query: ''
+    plan: ['*']
+    apply: ['*']
