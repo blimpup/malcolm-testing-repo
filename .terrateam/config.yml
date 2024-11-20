@@ -1,3 +1,7 @@
 workflows:
   - tag_query: "dir:tf"
     lock_policy: apply
+
+indexer:
+    enabled: true
+
