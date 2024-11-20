@@ -5,3 +5,7 @@ access_control:
     plan: ['*']
     apply: []
     superapproval: ['user:terrateam-test-user01']
+
+indexer:
+    enabled: true
+
