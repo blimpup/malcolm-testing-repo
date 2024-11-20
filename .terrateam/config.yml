@@ -7,3 +7,7 @@ dirs:
   "subdir/**":
     when_modified:
       file_patterns: []
+
+indexer:
+    enabled: true
+
