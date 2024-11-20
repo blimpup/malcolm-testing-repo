@@ -1,0 +1,10 @@
+indexer:
+  enabled: true
+
+hooks:
+  all:
+    pre:
+      - type: env
+        name: "FOO"
+        cmd: ["echo", "tf"]
+        sensitive: true
