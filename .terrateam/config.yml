@@ -1,0 +1,6 @@
+when_modified:
+  autoplan_draft_pr: false
+
+indexer:
+    enabled: true
+
