@@ -1,7 +1,0 @@
-drift:
-  enabled: true
-  schedule: hourly
-  reconcile: true
-
-indexer:
-  enabled: true
