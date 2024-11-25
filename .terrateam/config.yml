@@ -1,7 +1,0 @@
-workflows:
-  - tag_query: ''
-    plan:
-      - type: run
-        cmd: ['sleep', '120']
-      - type: init
-      - type: plan
