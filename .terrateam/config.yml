@@ -1,0 +1,11 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['asdf', 'plugin', 'add', 'python']
+      - type: run
+        cmd: ['asdf', 'install', 'python', '3.13.0']
+      - type: run
+        cmd: ['asdf', 'global', 'python', '3.13.0']
+      - type: run
+        cmd: ['python', '--version']
