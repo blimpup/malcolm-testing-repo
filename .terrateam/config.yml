@@ -1,0 +1,5 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['sleep', '120']
