@@ -1,0 +1,9 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['asdf', 'plugin-add', 'python']
+      - type: run
+        cmd: ['asdf', 'global', 'python', 'latest']
+      - type: run
+        cmd: ['python', '--version']
