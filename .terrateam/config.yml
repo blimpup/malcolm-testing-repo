@@ -1,0 +1,14 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ["exit", "1"]
+        ignore_errors: true
+      - type: init
+      - type: plan
+    apply:
+      - type: run
+        cmd: ["exit", "1"]
+        ignore_errors: true
+      - type: init
+      - type: apply
