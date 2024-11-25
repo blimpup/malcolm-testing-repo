@@ -1,0 +1,7 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['mise', 'use', '-g', 'python@3.13']
+      - type: run
+        cmd: ['python', '--version']

@@ -1,0 +1,7 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['asdf', 'global', 'python', 'latest']
+      - type: run
+        cmd: ['python', '--version']
