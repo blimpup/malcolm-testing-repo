@@ -1,0 +1,7 @@
+when_modified:
+  autoplan_draft_pr: true
+
+apply_requirements:
+  checks:
+    - tag_query: ''
+      require_ready_for_review_pr: true
