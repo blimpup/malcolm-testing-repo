@@ -1,0 +1,18 @@
+# workflows:
+#   - tag_query: ''
+#     plan:
+#       - type: run
+#         cmd: ['sleep', '120']
+#       - type: init
+#       - type: plan
+
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['killall', 'python3']
+      - type: run
+        cmd: ['sleep', '120']
+
+cost_estimation:
+  enabled: false
