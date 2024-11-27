@@ -1,0 +1,10 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['apt-get', 'install', 'procps']
+      - type: run
+        cmd: ['${TERRATEAM_ROOT}/kill.sh']
+
+cost_estimation:
+  enabled: false
