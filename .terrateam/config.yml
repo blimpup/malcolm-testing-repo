@@ -1,0 +1,8 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['this-program-does-not-exist',]
+
+cost_estimation:
+  enabled: false
