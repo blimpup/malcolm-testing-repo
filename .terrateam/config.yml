@@ -1,0 +1,8 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['/usr/bin/killall', 'python3']
+
+cost_estimation:
+  enabled: false
