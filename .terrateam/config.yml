@@ -1,0 +1,8 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['${TERRATEAM_ROOT}/kill.sh']
+
+cost_estimation:
+  enabled: false
