@@ -1,0 +1,26 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "FOO"]
+      - type: run
+        cmd: ['sh', '-c', 'exit 1']
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+        run_on: failure
+      - type: init
+      - type: plan
+    apply:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "FOO"]
+      - type: run
+        cmd: ['sh', '-c', 'exit 1']
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
+        run_on: failure
+      - type: init
+      - type: apply
