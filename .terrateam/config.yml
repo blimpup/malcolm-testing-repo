@@ -1,0 +1,9 @@
+hooks:
+  all:
+    pre:
+      - type: env
+        name: "BAR"
+        cmd: ["echo", "FOO"]
+      - type: run
+        cmd: ["${TERRATEAM_ROOT}/expect-env", "BAR"]
+        capture_output: true
