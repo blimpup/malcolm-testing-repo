@@ -1,0 +1,44 @@
+engine:
+  name: terragrunt
+  version: 0.69.9
+  tf_cmd: tofu
+
+when_modified:
+  file_patterns: []
+
+dirs:
+  '*/**/terragrunt.hcl':
+    when_modified:
+      file_patterns: ['${DIR}/*.hcl', '${DIR}/*.tf']
+
+workflows:
+  - tag_query: ''
+    engine:
+      name: terragrunt
+      version: 0.69.3
+      tf_cmd: tofu
+    plan:
+      - type: init
+      - type: plan
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version']
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version | grep "0.69.3"']
+    apply:
+      - type: init
+      - type: apply
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt version | grep "0.69.3"']
+  - tag_query: 'dir:tf1'
+    plan:
+      - type: init
+      - type: plan
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version']
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version | grep "0.69.9"']
+    apply:
+      - type: init
+      - type: apply
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version | grep "0.69.9"']
