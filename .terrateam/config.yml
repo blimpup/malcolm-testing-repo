@@ -1,0 +1,8 @@
+workflows:
+  - tag_query: ''
+    apply:
+      - type: run
+        cmd: ['this-program-does-not-exist',]
+
+cost_estimation:
+  enabled: false
