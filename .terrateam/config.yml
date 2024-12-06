@@ -1,0 +1,11 @@
+dirs:
+  database1:
+    when_modified:
+      depends_on: 'dir:base'
+  database2:
+    when_modified:
+      depends_on: 'dir:base'
+      autoplan: false
+  webservice:
+    when_modified:
+      depends_on: 'dir:database1 or dir:database2'
