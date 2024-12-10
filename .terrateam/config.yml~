@@ -1,0 +1,4 @@
+dirs:
+  terraform/projects/**/environment/**/*.tf:
+    when_modified:
+      file_patterns: ["${DIR}/*.tf", "${DIR}/../../../../components/**/*.tf"]
