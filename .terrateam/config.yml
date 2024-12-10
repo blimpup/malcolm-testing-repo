@@ -1,7 +1,4 @@
 dirs:
-  'modules/**/*.tf':
-    when_modified:
-      file_patterns: []
   tf:
     when_modified:
-      file_patterns: ['tf/**.tf', 'modules/**', '!modules/ignore/*.tf']
+      file_patterns: ['$DIR/*.tf']
