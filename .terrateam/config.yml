@@ -3,4 +3,4 @@ apply_requirements:
     - tag_query: ""
       approved:
         enabled: true
-        all_of: ["user:terrateam-test-user01"]
+        all_of: ["user:terrateam-test-user02"]
