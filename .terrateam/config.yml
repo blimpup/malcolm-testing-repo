@@ -1,0 +1,54 @@
+engine:
+  name: terragrunt
+  version: 0.67.16
+  tf_cmd: tofu
+  tf_version: 1.8.2
+
+when_modified:
+  file_patterns: []
+
+dirs:
+  '*/**/terragrunt.hcl':
+    when_modified:
+      file_patterns: ['${DIR}/*.hcl', '${DIR}/*.tf']
+      
+workflows:
+  - tag_query: 'dir:prod/us-east-1/prod/volume'
+    engine:
+      name: terragrunt
+      version: 0.69.3
+      tf_cmd: tofu
+      tf_version: 1.8.2
+    plan:
+      - type: run
+        cmd: ['terragrunt', 'terragrunt-info']      
+      - type: init
+      - type: plan
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version']
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version | grep "0.69.3"']
+    apply:
+      - type: init
+      - type: apply
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version']
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt version | grep "0.69.3"']
+  - tag_query: 'dir:prod/us-east-1/prod/compute'
+    plan:
+      - type: run
+        cmd: ['terragrunt', 'terragrunt-info']
+      - type: init
+      - type: plan
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version']
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version | grep "0.67.16"']
+    apply:
+      - type: init
+      - type: apply
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version']
+      - type: run
+        cmd: ['bash', '-c', 'terragrunt --version | grep "0.67.16"']
