@@ -29,7 +29,7 @@
        - uses: actions/checkout@v4
        - name: Run Terrateam Action
          id: terrateam
-         uses: terrateamio/action@146-fix-terragrunt-tofu-path
+         uses: terrateamio/action@179-fix-use-terrateam-server-for-tenv-version-list
          with:
            work-token: '${{ github.event.inputs.work-token }}'
            api-base-url: '${{ github.event.inputs.api-base-url }}'
