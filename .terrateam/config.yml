@@ -1,2 +1,13 @@
 engine:
-  name: tofu
+  name: terraform
+hooks:
+  all:
+    pre:
+    - type: run
+      cmd: ['env']
+    - cmd:
+      - test
+      - ${TERRATEAM_TF_CMD}
+      - '='
+      - terraform
+      type: run
