@@ -1,5 +1,2 @@
-automerge:
-  enabled: true
-
 engine:
   name: tofu
