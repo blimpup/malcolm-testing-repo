@@ -4,7 +4,7 @@ hooks:
   all:
     pre:
     - type: run
-      cmd: ['bash', '-c', '${TERRATEAM_TF_CMD} --version | grep 1\.5\.7']
+      cmd: ['env']
     - cmd:
       - test
       - ${TERRATEAM_TF_CMD}
