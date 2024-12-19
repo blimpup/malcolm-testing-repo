@@ -1,2 +1,17 @@
+default_tf_version: 1.5.0
 engine:
   name: tofu
+hooks:
+  all:
+    pre:
+    - cmd:
+      - test
+      - ${TERRATEAM_TF_CMD}
+      - '='
+      - terraform
+      type: run
+    - cmd:
+      - bash
+      - -c
+      - ${TERRATEAM_TF_CMD} --version | grep "Terraform v1\.5\.0"
+      type: run
