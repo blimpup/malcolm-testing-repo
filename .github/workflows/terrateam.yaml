@@ -29,7 +29,7 @@
        - uses: actions/checkout@v4
        - name: Run Terrateam Action
          id: terrateam
-         uses: terrateamio/action@369-refactor-scripts-and-dockerfile
+         uses: terrateamio/action@195-fix-drift-create-issue-workflow-step
          with:
            work-token: '${{ github.event.inputs.work-token }}'
            api-base-url: '${{ github.event.inputs.api-base-url }}'
