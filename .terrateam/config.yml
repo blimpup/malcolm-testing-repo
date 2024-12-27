@@ -1,6 +1,8 @@
 apply_requirements:
   checks:
   - approved:
+      all_of:
+      - user:terrateam-test-user02
       any_of:
       - user:terrateam-test-user01
       any_of_count: 2
