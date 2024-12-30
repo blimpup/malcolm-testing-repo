@@ -1,6 +1,0 @@
-dirs:
-  database:
-    when_modified:
-      depends_on: dir:base
-engine:
-  name: tofu
