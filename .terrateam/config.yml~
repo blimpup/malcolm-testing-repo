@@ -4,6 +4,3 @@ dirs:
       depends_on: dir:base
 engine:
   name: tofu
-drift:
-  enabled: true
-  schedule: hourly
