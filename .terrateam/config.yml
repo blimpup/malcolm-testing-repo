@@ -1,2 +1,26 @@
 engine:
-  name: tofu
+  name: terraform
+  version: 1.9.0
+hooks:
+  all:
+    pre:
+    - cmd:
+      - test
+      - ${TERRATEAM_TF_CMD}
+      - '='
+      - terraform
+      type: run
+    - type: run
+      cmd: ['${TERRATEAM_TF_CMD}', '--version']
+
+workflows:
+  - tag_query: ''
+    engine:
+      name: terraform
+      version: 1.9.0    
+    plan:
+      - type: run
+        cmd: ['${TERRATEAM_TF_CMD}', '--version']
+      - type: init
+      - type: plan
+      
