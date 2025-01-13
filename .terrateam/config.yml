@@ -1,2 +1,15 @@
 engine:
   name: tofu
+hooks:
+  all:
+    pre:
+    - cmd:
+      - echo
+      - FOO
+      name: BAR
+      type: env
+    - capture_output: true
+      cmd:
+      - ${TERRATEAM_ROOT}/expect-env
+      - BAR
+      type: run
