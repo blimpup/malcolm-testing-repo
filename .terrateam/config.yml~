@@ -23,7 +23,7 @@ workflows:
   - cmd:
     - bash
     - -c
-    - terragrunt --version | grep "0.69.13"
+    - terragrunt version | grep "0.69.13"
     type: run
   engine:
     name: terragrunt
@@ -89,12 +89,3 @@ workflows:
     - terragrunt --version | grep "0.67.16"
     type: run
   tag_query: dir:prod/us-east-1/prod/compute
-hooks:
-  all:
-    pre:
-    - type: env
-      name: 'TERRAGRUNT_LOG_LEVEL'
-      cmd: ['echo', 'warn']
-    - type: env
-      name: 'TERRAGRUNT_PROVIDER_CACHE'
-      cmd: ['echo', '1']      
