@@ -35,5 +35,3 @@
            api-base-url: '${{ github.event.inputs.api-base-url }}'
          env:
            SECRETS_CONTEXT: ${{ toJson(secrets) }}
-           HTTPS_PROXY: ${{ HTTPS_PROXY }}
-           HTTPS_PROXY_DOMAINS: ${{ HTTPS_PROXY_DOMAINS }}
