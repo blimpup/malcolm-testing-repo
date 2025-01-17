@@ -1,2 +1,10 @@
 engine:
-  name: tofu
+  name: pulumi
+
+when_modified:
+  file_patterns: []
+
+dirs:
+  dev:
+    when_modified:
+      file_patterns: ['${DIR}/*.yaml']
