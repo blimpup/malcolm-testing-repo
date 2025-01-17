@@ -1,2 +1,34 @@
 engine:
-  name: tofu
+  name: pulumi
+
+when_modified:
+  file_patterns: []
+
+dirs:
+  code:
+    when_modified:
+      file_patterns: ['${DIR}/**/*.yaml']
+
+    stacks:
+      dev: {}
+
+cost_estimation:
+  enabled: false
+
+hooks:
+  all:
+    pre:
+      - type: env
+        name: PULUMI_CONFIG_PASSPHRASE
+        cmd: ['echo', '']
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+        extra_args: ['file://${TERRATEAM_ROOT}/pulumi']
+      - type: plan
+    apply:
+      - type: init
+        extra_args: ['file://${TERRATEAM_ROOT}/pulumi']
+      - type: apply
