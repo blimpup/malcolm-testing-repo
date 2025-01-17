@@ -1,2 +1,23 @@
 engine:
-  name: tofu
+  name: pulumi
+
+when_modified:
+  file_patterns: []
+
+dirs:
+  code:
+    when_modified:
+      file_patterns: ['${DIR}/**/*.yaml']
+
+    workspaces:
+      dev: {}
+
+cost_estimation:
+  enabled: false
+
+hooks:
+  all:
+    pre:
+      - type: env
+        name: PULUMI_CONFIG_PASSPHRASE
+        cmd: ['echo', '']
