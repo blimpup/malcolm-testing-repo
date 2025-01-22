@@ -1,2 +1,10 @@
 engine:
   name: tofu
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        visibility: always
+        cmd: ['echo', 'TESTTESTTEST']
+      - type: init
+      - type: plan
