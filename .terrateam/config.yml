@@ -1,2 +1,9 @@
+access_control:
+  enabled: true
+  policies:
+  - apply_autoapprove:
+    - foo:bar
+    tag_query: ''
 engine:
   name: tofu
+foo: bar
