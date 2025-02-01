@@ -1,10 +1,7 @@
+apply_requirements:
+  checks:
+    approved:
+      count: 1
+      enabled: true
 engine:
   name: tofu
-
-access_control:
-  enabled: true
-  terrateam_config_update: ['user:terrateam-test-user01']
-  policies:
-  - tag_query: ''
-    plan: ['*']
-    apply: ['*']
