@@ -1,8 +1,3 @@
-apply_requirements:
-  checks:
-  - approved:
-      enabled: true
-    tag_query: and
 engine:
   name: tofu
 indexer:
