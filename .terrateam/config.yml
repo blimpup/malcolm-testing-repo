@@ -1,2 +1,10 @@
+access_control:
+  enabled: true
+  policies:
+  - apply_force:
+    - foo:bar
+    tag_query: ''
 engine:
   name: tofu
+indexer:
+  enabled: true
