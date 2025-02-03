@@ -1,2 +1,6 @@
 engine:
   name: tofu
+indexer:
+  enabled: true
+when_modified:
+  autoapply: true
