@@ -1,2 +1,115 @@
+dirs:
+  tf1:
+    tags:
+    - tf1
 engine:
   name: tofu
+workflows:
+- apply:
+  - cmd:
+    - echo
+    - DIR_GLOB
+    name: BAR
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    type: run
+  - type: init
+  - type: apply
+  plan:
+  - cmd:
+    - echo
+    - DIR_GLOB
+    name: BAR
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    type: run
+  - type: init
+  - type: plan
+  tag_query: dir~tf3
+- apply:
+  - cmd:
+    - echo
+    - DIR_EXACT
+    name: BAR
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    type: run
+  - type: init
+  - type: apply
+  plan:
+  - cmd:
+    - echo
+    - DIR_EXACT
+    name: BAR
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    type: run
+  - type: init
+  - type: plan
+  tag_query: dir:tf2
+- apply:
+  - cmd:
+    - echo
+    - TAG_MATCH
+    name: BAR
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    type: run
+  - type: init
+  - type: apply
+  plan:
+  - cmd:
+    - echo
+    - TAG_MATCH
+    name: BAR
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    type: run
+  - type: init
+  - type: plan
+  tag_query: tf1
+- apply:
+  - cmd:
+    - echo
+    - DEFAULT
+    name: BAR
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    type: run
+  - type: init
+  - type: apply
+  plan:
+  - cmd:
+    - echo
+    - DEFAULT
+    name: BAR
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    type: run
+  - type: init
+  - type: plan
+  tag_query: ''
