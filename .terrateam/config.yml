@@ -10,3 +10,5 @@ dirs:
       - '!modules/ignore/*.tf'
 engine:
   name: tofu
+indexer:
+  enabled: true
