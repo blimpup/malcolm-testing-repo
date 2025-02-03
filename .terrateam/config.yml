@@ -1,2 +1,10 @@
 engine:
   name: tofu
+storage:
+  plans:
+    access_key_id: $PLAN_ACCESS_KEY_ID
+    bucket: $PLAN_STORAGE_BUCKET
+    method: s3
+    path: testing/$dir/$workspace/$token
+    region: us-east-1
+    secret_access_key: $PLAN_SECRET_ACCESS_KEY
