@@ -1,2 +1,4 @@
 engine:
   name: tofu
+workflows:
+- tag_query: ()
