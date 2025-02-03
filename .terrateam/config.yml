@@ -1,2 +1,7 @@
+drift:
+  schedule: weekly
+  tag_query: and and
 engine:
   name: tofu
+indexer:
+  enabled: true
