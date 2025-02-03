@@ -1,2 +1,4 @@
+access_control:
+  enabled: true
 engine:
   name: tofu
