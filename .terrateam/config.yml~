@@ -9,7 +9,7 @@ dirs:
     when_modified:
       file_patterns: ['${DIR}/**/*.yaml']
 
-    stacks:
+    workspaces:
       dev: {}
 
 cost_estimation:
