@@ -1,8 +1,2 @@
-access_control:
-  enabled: true
-  policies:
-  - apply:
-    - repo:read
-    tag_query: ''
 engine:
   name: tofu
