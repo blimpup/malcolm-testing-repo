@@ -1,5 +1,6 @@
 access_control:
-  ci_config_update: []
   enabled: true
+  files:
+    other_files/README.md: []
 engine:
   name: tofu
