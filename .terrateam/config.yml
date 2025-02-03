@@ -1,2 +1,6 @@
+access_control:
+  enabled: true
 engine:
   name: tofu
+indexer:
+  enabled: true
