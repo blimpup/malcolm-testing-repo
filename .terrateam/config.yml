@@ -1,6 +1,2 @@
-access_control:
-  enabled: true
-  files:
-    other_files/README.md: []
 engine:
   name: tofu
