@@ -1,16 +1,2 @@
-access_control:
-  enabled: true
-  policies:
-  - apply: []
-    plan:
-    - '*'
-    tag_query: dir:tf2
-  - apply:
-    - '*'
-    plan:
-    - '*'
-    tag_query: ''
 engine:
   name: tofu
-when_modified:
-  autoplan: false
