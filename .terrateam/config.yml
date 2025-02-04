@@ -6,7 +6,7 @@ access_control:
     apply_force: ['*']
     tag_query: ''
 apply_requirements:
-  policies:
+  checks:
     - tag_query: ''
       approved:
         enabled: true
