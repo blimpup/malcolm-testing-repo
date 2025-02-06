@@ -1,2 +1,11 @@
 engine:
   name: tofu
+
+hooks:
+  all:
+    pre:
+      - type: env
+        name: GIT_BRANCH
+        cmd: ['git', 'branch', '--show-current']
+      - type: run
+        cmd: ['env']
