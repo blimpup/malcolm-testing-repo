@@ -1,9 +1,4 @@
-apply_requirements:
-  checks:
-    approved:
-      count: 1
-      enabled: true
+access_control:
+  enabled: false
 engine:
   name: tofu
-when_modified:
-  autoapply: true
