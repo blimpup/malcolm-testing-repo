@@ -1,2 +1,45 @@
 engine:
-  name: tofu
+  name: terragrunt
+workflows:
+- apply:
+  - type: init
+  - type: apply
+  - cmd:
+    - test
+    - ${TERRATEAM_TF_CMD}
+    - '='
+    - terraform
+    type: run
+  engine:
+    name: terraform
+  plan:
+  - type: init
+  - type: plan
+  - cmd:
+    - test
+    - ${TERRATEAM_TF_CMD}
+    - '='
+    - terraform
+    type: run
+  tag_query: dir:tf
+- apply:
+  - type: init
+  - type: apply
+  - cmd:
+    - test
+    - ${TERRATEAM_TF_CMD}
+    - '='
+    - tofu
+    type: run
+  engine:
+    name: tofu
+  plan:
+  - type: init
+  - type: plan
+  - cmd:
+    - test
+    - ${TERRATEAM_TF_CMD}
+    - '='
+    - tofu
+    type: run
+  tag_query: dir:tf1
