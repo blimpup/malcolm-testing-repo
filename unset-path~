@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+unset TFENV_TERRAFORM_DEFAULT_VERSION
