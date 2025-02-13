@@ -1,2 +1,12 @@
 engine:
   name: tofu
+hooks:
+  all:
+    pre:
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['bash', '-c', '${TERRATEAM_TF_CMD} --version | grep 1\.6\.0']
+      - type: init
+      - type: plan
