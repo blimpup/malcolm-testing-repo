@@ -1,2 +1,19 @@
 engine:
   name: tofu
+hooks:
+  all:
+    pre:
+    - cmd:
+      - test
+      - ${TERRATEAM_TF_CMD}
+      - '='
+      - tofu
+      type: run
+workflows:
+  - tag_query: ''
+    plan:
+      - type: env
+        method: source
+        cmd: ['${TERRATEAM_ROOT}/unset-path']
+      - type: init
+      - type: plan
