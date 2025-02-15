@@ -1,5 +1,17 @@
 drift:
-  enabled: false
-  schedule: hourly
+  enabled: true
+  schedules:
+    tf:
+      schedule: hourly
+      tag_query: dir:tf
+      window:
+        start: 06:00 JST
+        end: 09:00 JST
+    tf2:
+      schedule: hourly
+      tag_query: dir:tf2
+      window:
+        start: 07:00
+        end: 09:00
 engine:
   name: tofu
