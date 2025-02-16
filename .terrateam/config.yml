@@ -1,2 +1,11 @@
+cost_estimation:
+  enabled: false
 engine:
   name: tofu
+hooks:
+  all:
+    pre:
+    - cmd:
+      - sleep
+      - '120'
+      type: run
