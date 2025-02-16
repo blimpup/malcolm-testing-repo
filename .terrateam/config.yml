@@ -1,5 +1,4 @@
-drift:
+access_control:
   enabled: false
-  schedule: hourly
 engine:
   name: tofu
