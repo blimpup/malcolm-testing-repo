@@ -1,13 +1,5 @@
-config_builder:
-  enabled: true
-  script: '#! /usr/bin/env bash
-
-    echo ''{}''
-
-    '
 drift:
-  enabled: true
-  reconcile: true
+  enabled: false
   schedule: hourly
 engine:
   name: tofu
