@@ -1,4 +1,7 @@
 access_control:
   enabled: false
+  policies:
+  - plan: []
+    tag_query: ''
 engine:
   name: tofu
