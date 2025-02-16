@@ -1,11 +1,6 @@
 drift:
   enabled: true
-  schedules:
-    tf:
-      schedule: hourly
-      tag_query: dir:tf
-    tf2:
-      schedule: hourly
-      tag_query: dir:tf2
+  schedule: hourly
+  tag_query: dir:tf
 engine:
   name: tofu
