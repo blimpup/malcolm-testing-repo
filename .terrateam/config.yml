@@ -1,8 +1,2 @@
-drift:
-  enabled: true
-  schedules:
-    default:
-      schedule: hourly
-      tag_query: ''
 engine:
   name: tofu
