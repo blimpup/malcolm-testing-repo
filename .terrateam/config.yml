@@ -1,2 +1,7 @@
+config_builder:
+  enabled: true
+  script: 'echo ''{"indexer": {"enabled": true}}''
+
+    '
 engine:
   name: tofu
