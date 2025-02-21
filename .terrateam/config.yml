@@ -1,2 +1,30 @@
 engine:
   name: tofu
+workflows:
+- environment: development
+  tag_query: dir:tf1
+- environment: production
+  tag_query: dir:tf2
+- environment: production
+  tag_query: dir:tf3
+- environment: production
+  tag_query: dir:tf4
+  plan:
+    - type: run
+      cmd: ['sleep', '60']
+    - type: run
+      cmd: ['exit', '1']
+- environment: production
+  tag_query: dir:tf5
+  plan:
+    - type: run
+      cmd: ['sleep', '60']
+    - type: run
+      cmd: ['exit', '1']
+- environment: production
+  tag_query: dir:tf6
+  plan:
+    - type: run
+      cmd: ['sleep', '60']
+    - type: run
+      cmd: ['exit', '1']
