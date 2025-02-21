@@ -3,11 +3,5 @@ engine:
 workflows:
 - environment: development
   tag_query: dir:tf1
-  plan:
-    - type: run
-      cmd: ['exit', '1']  
 - environment: production
   tag_query: dir:tf2
-  plan:
-    - type: run
-      cmd: ['exit', '1']
