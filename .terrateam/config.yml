@@ -1,2 +1,28 @@
 engine:
   name: tofu
+workflows:
+- apply:
+  - capture_output: true
+    cmd:
+    - echo
+    - FOO
+    type: run
+  - capture_output: true
+    cmd:
+    - 'false'
+    type: run
+  - type: init
+  - type: apply
+  plan:
+  - capture_output: true
+    cmd:
+    - echo
+    - FOO
+    type: run
+  - capture_output: true
+    cmd:
+    - 'false'
+    type: run
+  - type: init
+  - type: plan
+  tag_query: ''
