@@ -1,2 +1,75 @@
 engine:
   name: tofu
+
+
+when_modified:
+  file_patterns: []
+
+dirs:
+  "**/terraform/*1*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*2*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*3*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*4*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*5*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*6*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*7*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*8*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*9*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*10*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*11*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*12*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*13*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*14*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*15*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*16*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*17*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*18*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*19*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/*20*/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/terraform/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  "**/tf/**/*.tf":
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  
