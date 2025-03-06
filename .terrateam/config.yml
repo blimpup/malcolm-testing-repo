@@ -66,10 +66,10 @@ dirs:
   "**/terraform/*20*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/terraform/*/**":
+  "**/terraform/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-    "**/tf/*/**":
+  "**/tf/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
   
