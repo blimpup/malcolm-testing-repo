@@ -6,67 +6,67 @@ when_modified:
   file_patterns: []
 
 dirs:
-  "**/tf*1*/**/**":
+  "**/*1*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*2*/**/**":
+  "**/*2*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*3*/**/**":
+  "**/*3*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*4*/**/**":
+  "**/*4*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*5*/**/**":
+  "**/*5*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*6*/**/**":
+  "**/*6*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*7*/**/**":
+  "**/*7*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*8*/**/**":
+  "**/*8*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*9*/**/**":
+  "**/*9*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*10*/**/**":
+  "**/*10*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*11*/**/**":
+  "**/*11*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*12*/**/**":
+  "**/*12*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*13*/**/**":
+  "**/*13*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*14*/**/**":
+  "**/*14*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*15*/**/**":
+  "**/*15*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*16*/**/**":
+  "**/*16*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*17*/**/**":
+  "**/*17*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*18*/**/**":
+  "**/*18*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*19*/**/**":
+  "**/*19*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*20*/**/**":
+  "**/*20*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
-  "**/tf*/**/**":
+  "**/*/**":
     when_modified:
       file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
   
