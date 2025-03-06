@@ -1,2 +1,71 @@
 engine:
   name: tofu
+
+
+when_modified:
+  file_patterns: []
+
+dirs:
+  tf1/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf2/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf3/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf4/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf5/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf6/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf7/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf8/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf9/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf10/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf11/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf12/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf13/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf14/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf15/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf16/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf17/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf18/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf19/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf20/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
+  tf*/**/*.tf:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'l150/l2250/*_5.txt']
