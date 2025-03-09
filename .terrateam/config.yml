@@ -1,2 +1,20 @@
 engine:
   name: tofu
+workflows:
+- apply:
+  - cmd:
+    - exit
+    - '1'
+    ignore_errors: true
+    type: run
+  - type: init
+  - type: apply
+  plan:
+  - cmd:
+    - exit
+    - '1'
+    ignore_errors: true
+    type: run
+  - type: init
+  - type: plan
+  tag_query: ''
