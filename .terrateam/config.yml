@@ -1,2 +1,33 @@
 engine:
   name: tofu
+workflows:
+- apply:
+  - type: init
+  - type: apply
+  - cmd:
+    - test
+    - ${TERRATEAM_TF_CMD}
+    - '='
+    - terraform
+    type: run
+  - cmd:
+    - bash
+    - -c
+    - ${TERRATEAM_TF_CMD} --version | grep "Terraform v1\.5\.0"
+    type: run
+  plan:
+  - type: init
+  - type: plan
+  - cmd:
+    - test
+    - ${TERRATEAM_TF_CMD}
+    - '='
+    - terraform
+    type: run
+  - cmd:
+    - bash
+    - -c
+    - ${TERRATEAM_TF_CMD} --version | grep "Terraform v1\.5\.0"
+    type: run
+  tag_query: dir:tf
+  terraform_version: 1.5.0
