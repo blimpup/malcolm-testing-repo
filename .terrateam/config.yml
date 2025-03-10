@@ -1,4 +1,11 @@
+apply_requirements:
+  checks:
+  - approved:
+      all_of:
+      - user:terrateam-test-user01
+      enabled: true
+    tag_query: ''
 engine:
   name: tofu
-when_modified:
-  autoplan: false
+indexer:
+  enabled: true
