@@ -9,3 +9,5 @@ dirs:
       file_patterns: []
 engine:
   name: tofu
+indexer:
+  enabled: true
