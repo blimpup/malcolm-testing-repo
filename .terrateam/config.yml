@@ -1,2 +1,8 @@
+access_control:
+  enabled: true
+  policies:
+  - apply_with_superapproval:
+    - foo:bar
+    tag_query: ''
 engine:
   name: tofu
