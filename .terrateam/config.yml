@@ -1,5 +1,6 @@
 access_control:
   enabled: true
+  plan_require_all_dirspace_access: true
   policies:
   - plan: []
     tag_query: dir:tf2
