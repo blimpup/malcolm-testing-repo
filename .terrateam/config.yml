@@ -1,2 +1,11 @@
 engine:
   name: tofu
+hooks:
+  all:
+    pre:
+    - cmd:
+      - echo
+      - tf
+      name: FOO
+      sensitive: true
+      type: env
