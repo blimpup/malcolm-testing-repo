@@ -8,18 +8,12 @@ dirs:
         tags:
         - workspace1
         when_modified:
-          file_patterns:
-          - ${DIR}/*.tf
-          - ${DIR}/*.tfvars
-          - '!${DIR}/workspace2.tfvars'
+          autoplan: true
       workspace2:
         tags:
         - workspace2
         when_modified:
-          file_patterns:
-          - ${DIR}/*.tf
-          - ${DIR}/*.tfvars
-          - '!${DIR}/workspace1.tfvars'
+          autoplan: false
 engine:
   name: tofu
 workflows:
