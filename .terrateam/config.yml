@@ -1,9 +1,13 @@
 apply_requirements:
+  create_pending_apply_check: false
   checks:
-    approved:
-      count: 1
-      enabled: true
+    - tag_query: ''
+      approved:
+        enabled: true
+        any_of_count: 1000
+
 engine:
   name: tofu
+
 when_modified:
   autoapply: true
