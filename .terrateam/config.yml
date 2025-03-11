@@ -1,2 +1,19 @@
+dirs:
+  '**/*.tf':
+    tags:
+    - bar
+  tf:
+    create_and_select_workspace: true
+    tags:
+    - phoenix
+    when_modified:
+      autoplan: true
+    workspaces:
+      eu:
+        tags:
+        - eu
+      uk:
+        tags:
+        - uk
 engine:
   name: tofu
