@@ -1,5 +1,7 @@
 access_control:
-  ci_config_update: []
   enabled: true
-engine:
-  name: tofu
+  ci_config_update: ['user:terrateam-test-user01']
+  policies:
+  - tag_query: ''
+    plan: ['*']
+    apply: ['*']
