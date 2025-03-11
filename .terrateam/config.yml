@@ -1,2 +1,6 @@
+access_control:
+  enabled: true
+  terrateam_config_update:
+  - foo:bar
 engine:
   name: tofu
