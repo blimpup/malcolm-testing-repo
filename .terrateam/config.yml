@@ -1,2 +1,21 @@
 engine:
   name: tofu
+hooks:
+  all:
+    pre:
+    - cmd:
+      - sh
+      - -c
+      - exit 1
+      type: run
+    - capture_output: true
+      cmd:
+      - ${TERRATEAM_ROOT}/expect-env
+      - ENVIRONMENT
+      run_on: failure
+      type: run
+workflows:
+- environment: development
+  tag_query: dir:tf1
+- environment: production
+  tag_query: dir:tf2
