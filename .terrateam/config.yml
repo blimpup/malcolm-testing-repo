@@ -1,2 +1,5 @@
+access_control:
+  ci_config_update: []
+  enabled: true
 engine:
   name: tofu
