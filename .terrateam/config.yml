@@ -1,2 +1,6 @@
 engine:
-  name: tofu
+  name: custom
+  init: ['echo', 'init']
+  plan: ['touch', '$TERRATEAM_PLAN_FILE']
+  show: ['echo', 'show']
+  apply: ['echo', 'apply']
