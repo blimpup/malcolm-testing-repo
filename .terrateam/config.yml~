@@ -1,6 +1,5 @@
 engine:
   name: tofu
-  override_tf_cmd: '${TERRATEAM_ROOT}/bin/tofu-wrapper'
 hooks:
   all:
     pre:
