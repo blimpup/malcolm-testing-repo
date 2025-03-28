@@ -14,10 +14,3 @@ dirs:
 
 cost_estimation:
   enabled: false
-
-hooks:
-  all:
-    pre:
-      - type: env
-        name: 'FLY_ORG'
-        cmd: ['echo', 'testing-187']
