@@ -11,7 +11,7 @@ workflows:
           - type: gate
             token: foobar
             any_of: ['user:terrateam-test-user02']
-            any_of_count: 2
+            any_of_count: 1
       - type: init
       - type: plan
           
