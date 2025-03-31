@@ -6,7 +6,8 @@ workflows:
     plan:
       - type: init
       - type: plan
-      - type: conftest
+      - type: checkov
+          
 
 cost_estimation:
   enabled: false
