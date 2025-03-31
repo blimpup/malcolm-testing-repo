@@ -1,2 +1,19 @@
 engine:
   name: tofu
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['false']
+        ignore_errors: true
+        on_error:
+          - type: gate
+            token: foobar
+            all_of: ['user:terrateam_test_user01']
+      - type: init
+      - type: plan
+          
+
+cost_estimation:
+  enabled: false
