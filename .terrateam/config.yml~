@@ -1,9 +1,9 @@
 engine:
   name: tofu
 
-hooks:
-  plan:
-    pre:
+workflows:
+  - tag_query: ''
+    plan:
       - type: run
         cmd: ['false']
         ignore_errors: true
@@ -11,6 +11,9 @@ hooks:
           - type: gate
             token: foobar
             all_of: ['user:terrateam-test-user02']
+      - type: init
+      - type: plan
+          
 
 cost_estimation:
   enabled: false
