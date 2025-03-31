@@ -10,7 +10,7 @@ workflows:
         on_error:
           - type: gate
             token: foobar
-            all_of: ['*']
+            all_of: ['user:terrateam-test-user02']
       - type: init
       - type: plan
           
