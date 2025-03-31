@@ -7,7 +7,6 @@ workflows:
       - type: run
         cmd: ['false']
         ignore_errors: true
-        visible_on: always
         on_error:
           - type: gate
             token: foobar
