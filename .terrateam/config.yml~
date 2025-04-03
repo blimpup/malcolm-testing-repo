@@ -6,10 +6,8 @@ workflows:
     plan:
       - type: init
       - type: plan
-      - type: conftest
-        gate:
-          token: null_resource
-          all_of: ['user:terrateam-test-user02']
+      - type: checkov
+          
 
 cost_estimation:
   enabled: false
