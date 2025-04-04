@@ -1,2 +1,8 @@
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['env']
+
 engine:
   name: tofu
