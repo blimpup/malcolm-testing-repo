@@ -1,2 +1,17 @@
 engine:
   name: tofu
+hooks:
+  all:
+    pre:
+    - cmd:
+      - echo
+      - null_resource
+      name: DUMMY
+      sensitive: false
+      type: env
+    - cmd:
+      - echo
+      - '$DUMMY'
+      name: DUMMY
+      sensitive: true
+      type: env
