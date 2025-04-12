@@ -8,6 +8,7 @@
  # See https://docs.terrateam.io/configuration/overview for details
  ##########################################################################
  name: 'Terrateam Workflow'
+ run-name: 'Terrateam Workflow ${{ github.head_ref }}'
  on:
    workflow_dispatch:
      inputs:
@@ -29,7 +30,7 @@
        - uses: actions/checkout@v4
        - name: Run Terrateam Action
          id: terrateam
-         uses: terrateamio/action@389-fix-logging-sensitive-values
+         uses: terrateamio/action@v1
          with:
            work-token: '${{ github.event.inputs.work-token }}'
            api-base-url: '${{ github.event.inputs.api-base-url }}'
