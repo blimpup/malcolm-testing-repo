@@ -8,7 +8,6 @@
  # See https://docs.terrateam.io/configuration/overview for details
  ##########################################################################
  name: 'Terrateam Workflow'
- run-name: 'Terrateam Workflow ${{ github.head_ref }}'
  on:
    workflow_dispatch:
      inputs:
