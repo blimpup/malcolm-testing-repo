@@ -1,2 +1,11 @@
 engine:
   name: tofu
+
+workflows:
+  - tag_query: ''
+    plan:
+    - type: env
+      cmd: ['echo', '$TERRATEAM_ROOT']
+      name: FOOBAR
+      sensitive: true
+
