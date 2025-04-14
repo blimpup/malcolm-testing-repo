@@ -1,2 +1,91 @@
+dirs:
+  '*/**/terragrunt.hcl':
+    when_modified:
+      file_patterns:
+      - ${DIR}/*.hcl
+      - ${DIR}/*.tf
 engine:
-  name: tofu
+  name: terragrunt
+  tf_cmd: tofu
+  tf_version: 1.8.2
+  version: 0.67.16
+when_modified:
+  file_patterns: []
+workflows:
+- apply:
+  - type: init
+  - type: apply
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version
+    type: run
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version | grep "0.69.13"
+    type: run
+  engine:
+    name: terragrunt
+    tf_cmd: terraform
+    tf_version: 1.5.7
+    version: 0.69.13
+  plan:
+  - cmd:
+    - terragrunt
+    - terragrunt-info
+    type: run
+  - cmd:
+    - bash
+    - -c
+    - terragrunt terragrunt-info | grep terraform
+    type: run
+  - type: init
+  - type: plan
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version
+    type: run
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version | grep "0.69.13"
+    type: run
+  tag_query: dir:prod/us-east-1/prod/volume
+- apply:
+  - type: init
+  - type: apply
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version
+    type: run
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version | grep "0.67.16"
+    type: run
+  plan:
+  - cmd:
+    - terragrunt
+    - terragrunt-info
+    type: run
+  - cmd:
+    - bash
+    - -c
+    - terragrunt terragrunt-info | grep tofu
+    type: run
+  - type: init
+  - type: plan
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version
+    type: run
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version | grep "0.67.16"
+    type: run
+  tag_query: dir:prod/us-east-1/prod/compute
