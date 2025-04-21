@@ -1,2 +1,17 @@
 engine:
   name: tofu
+
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['bash', '-c', 'curl -fsSL https://pyenv.run | bash']
+      - type: env
+        name: PYENV_ROOT
+        cmd: ['echo', '$HOME/.pyenv']
+      - type: run
+        cmd: ['pyenv', 'install', '3.11.11']
+      - type: run
+        cmd: ['pyenv', 'global', '3.11.11']
+      - type: run
+        cmd: ['pyenv', 'exec', 'python', '--version']
