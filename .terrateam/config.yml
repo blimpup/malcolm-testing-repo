@@ -1,11 +1,2 @@
-drift:
-  enabled: true
-  schedules:
-    default:
-      schedule: hourly
-      tag_query: ''
-      window:
-        start: '20:00 PST'
-        end: '02:00 PST'
 engine:
   name: tofu
