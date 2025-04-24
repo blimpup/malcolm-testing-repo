@@ -1,4 +1,2 @@
-apply_requirements:
-  create_completed_apply_check_on_noop: true
 engine:
   name: tofu
