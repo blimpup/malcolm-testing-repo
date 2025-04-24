@@ -1,2 +1,9 @@
+config_builder:
+  enabled: true
+  script: '#! /usr/bin/env bash
+
+    terrateam-aux-repo-config
+
+    '
 engine:
   name: tofu
