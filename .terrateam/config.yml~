@@ -10,14 +10,7 @@ dirs:
     when_modified:
       file_patterns: ['${DIR}/*.toml']
     workspaces:
-      'terrateam-malcolm-blimpup-test-app': {}
+      'test-app': {}
 
 cost_estimation:
   enabled: false
-
-hooks:
-  all:
-    pre:
-      - type: env
-        name: 'FLY_ORG'
-        cmd: ['echo', 'testing-187']
