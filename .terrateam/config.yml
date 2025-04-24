@@ -1,9 +1,9 @@
 apply_requirements:
   checks:
-  - approved:
-      all_of:
-      - user:terrateam-test-user02
+    approved:
+      count: 1
       enabled: true
-    tag_query: dir:tf1
 engine:
   name: tofu
+when_modified:
+  autoapply: true
