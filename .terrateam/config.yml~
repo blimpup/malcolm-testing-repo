@@ -14,7 +14,3 @@ workflows:
       - type: plan
 
 parallel_runs: 10
-
-batch_runs:
-  enabled: true
-  max_workspaces_per_batch: 3
