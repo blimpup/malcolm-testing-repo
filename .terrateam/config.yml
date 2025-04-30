@@ -1,2 +1,4 @@
 engine:
   name: tofu
+
+runs_on: "ubuntu-latest"
