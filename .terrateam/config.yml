@@ -1,2 +1,6 @@
 engine:
   name: tofu
+
+workflows:
+  - tag_query: ''
+    runs_on: "ubuntu-22.04"
