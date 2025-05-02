@@ -1,2 +1,13 @@
+dirs:
+  tf/**/envs/**/*.tf:
+    when_modified:
+      file_patterns:
+      - ${DIR}/*.tf
+      - ${DIR}/../../modules/*.tf
+  tf/**/modules/**:
+    when_modified:
+      file_patterns: []
 engine:
   name: tofu
+when_modified:
+  autoplan: false
