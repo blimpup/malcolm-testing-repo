@@ -1,2 +1,14 @@
 engine:
   name: tofu
+tags:
+  branch:
+    main: main
+    test: test
+workflows:
+- apply:
+  - type: init
+  - type: apply
+  plan:
+  - type: init
+  - type: plan
+  tag_query: branch:test
