@@ -1,8 +1,0 @@
-tree_builder:
-  enabled: true
-  script: |
-    #! /usr/bin/env bash
-    $TERRATEAM_ROOT/bin/tree-builder
-
-engine:
-  name: tofu
