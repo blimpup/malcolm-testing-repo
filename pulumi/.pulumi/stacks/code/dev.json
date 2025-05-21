@@ -1,0 +1,20 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "Stack": "organization/code/dev",
+        "Latest": {
+            "manifest": {
+                "time": "2025-01-17T12:17:38.37085802Z",
+                "magic": "77be084e65c763fde87b290a0a6ba5aaacad687cde41d20d76768df34b0db77a",
+                "version": "v3.146.0"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:6exg+cfDvA8=:v1:aP2YLp09lIK14bKc:yia4R/aVPCYloHWnAHWoik8bULrW+w=="
+                }
+            },
+            "metadata": {}
+        }
+    }
+}
