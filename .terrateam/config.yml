@@ -5,3 +5,5 @@ access_control:
     tag_query: ''
 engine:
   name: tofu
+indexer:
+  enabled: true
