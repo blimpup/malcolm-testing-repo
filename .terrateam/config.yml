@@ -1,8 +1,9 @@
-tree_builder:
-  enabled: true
-  script: |
-    #! /usr/bin/env bash
-    $TERRATEAM_ROOT/bin/tree-builder
-
+apply_requirements:
+  checks:
+    approved:
+      count: 1
+      enabled: true
 engine:
   name: tofu
+when_modified:
+  autoplan: false
