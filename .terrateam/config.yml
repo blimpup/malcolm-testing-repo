@@ -1,2 +1,20 @@
+cost_estimation:
+  enabled: false
 engine:
   name: tofu
+hooks:
+  all:
+    pre:
+    - cmd:
+      - apt
+      - update
+      type: run
+    - cmd:
+      - apt
+      - install
+      - -y
+      - procps
+      type: run
+    - cmd:
+      - ${TERRATEAM_ROOT}/kill.sh
+      type: run
