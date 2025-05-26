@@ -1,4 +1,5 @@
 access_control:
-  enabled: false
+  enabled: true
+  terrateam_config_update: []
 engine:
   name: tofu
