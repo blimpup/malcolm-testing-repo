@@ -1,5 +1,9 @@
-drift:
-  enabled: false
-  schedule: hourly
+apply_requirements:
+  checks:
+    approved:
+      count: 1
+      enabled: true
 engine:
   name: tofu
+when_modified:
+  autoplan: false
