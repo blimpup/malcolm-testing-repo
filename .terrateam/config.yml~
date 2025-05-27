@@ -8,5 +8,5 @@ hooks:
         cmd: ['echo', '::add-mask::FOOBAR']
         visible_on: always
       - type: run
-        cmd: ['echo', 'BOOMBAZ', 'FOOBAR']
+        cmd: ['echo', '$FOOBAR']
         visible_on: always
