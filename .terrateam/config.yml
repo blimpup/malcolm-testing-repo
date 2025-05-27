@@ -1,2 +1,12 @@
 engine:
   name: tofu
+
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['echo', '::add-mask::FOOBAR']
+        visible_on: always
+      - type: run
+        cmd: ['echo', '$FOOBAR']
+        visible_on: always
