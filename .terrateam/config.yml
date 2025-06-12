@@ -1,2 +1,30 @@
 engine:
   name: tofu
+workflows:
+- apply:
+  - capture_output: true
+    cmd:
+    - echo
+    - TERRATEAM_RUN_KIND=${TERRATEAM_RUN_KIND}=
+    type: run
+  - cmd:
+    - est
+    - -n
+    - ''
+    type: run
+  - type: init
+  - type: apply
+  plan:
+  - capture_output: true
+    cmd:
+    - echo
+    - TERRATEAM_RUN_KIND=${TERRATEAM_RUN_KIND}=
+    type: run
+  - cmd:
+    - test
+    - -n
+    - ''
+    type: run
+  - type: init
+  - type: plan
+  tag_query: ''
