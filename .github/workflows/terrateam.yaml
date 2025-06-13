@@ -17,12 +17,15 @@
          required: true
        api-base-url:
          description: 'API Base URL'
+       runs_on:
+         type: string
+         default: ubuntu-latest
  jobs:
    terrateam:
      permissions: # Required to pass credentials to the Terrateam action
        id-token: write
        contents: read
-     runs-on: ubuntu-latest
+     runs-on: ${{ fromJSON(github.event.inputs.runs_on) }}
      timeout-minutes: 1440
      name: Terrateam Action
      steps:
