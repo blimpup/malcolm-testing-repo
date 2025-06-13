@@ -1,2 +1,11 @@
 engine:
   name: tofu
+workflows:
+- apply:
+  - type: init
+  - type: apply
+  plan:
+  - type: init
+  - mode: fast-and-loose
+    type: plan
+  tag_query: ''
