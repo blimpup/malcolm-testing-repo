@@ -1,4 +1,9 @@
+apply_requirements:
+  checks:
+    approved:
+      count: 1
+      enabled: true
 engine:
   name: tofu
-when_modified:
-  autoplan: false
+indexer:
+  enabled: true
