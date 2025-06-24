@@ -3,19 +3,23 @@ dirs:
     create_and_select_workspace: false
     tags:
     - tf
-    when_modified:
-      file_patterns:
-      - ${DIR}/*.tf
-      - ${DIR}/*.tfvars
-      - ${DIR}/backend-${WORKSPACE}.conf
     workspaces:
       workspace1:
         tags:
         - workspace1
-        when_modified: null
+        when_modified:
+          file_patterns:
+          - ${DIR}/*.tf
+          - ${DIR}/*.tfvars
+          - '!${DIR}/workspace2.tfvars'
       workspace2:
         tags:
         - workspace2
+        when_modified:
+          file_patterns:
+          - ${DIR}/*.tf
+          - ${DIR}/*.tfvars
+          - '!${DIR}/workspace1.tfvars'
 engine:
   name: tofu
 workflows:
