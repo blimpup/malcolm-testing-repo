@@ -1,5 +1,2 @@
-when_modified:
-  autoplan: false
-
 engine:
   name: tofu
