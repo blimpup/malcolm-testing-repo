@@ -1,2 +1,5 @@
 engine:
   name: tofu
+
+cost_estimation:
+  enabled: false
