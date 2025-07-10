@@ -1,4 +1,4 @@
-destinations_branches:
+destination_branches:
   - main
   - dev
 
