@@ -2,8 +2,6 @@ destination_branches:
   - main
   - dev
 
-when_modified:
-  autoplan: false
 
 engine:
   name: tofu
