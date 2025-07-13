@@ -1,4 +1,4 @@
-destinations_branches:
+destination_branches:
   - main
   - dev
 
@@ -8,4 +8,4 @@ engine:
 
 dirs:
   '**/*.tf':
-    lock_branch_target: dest_branch
+    lock_branch_target: dest_branch2
