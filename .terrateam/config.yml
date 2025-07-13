@@ -1,11 +1,2 @@
-destination_branches:
-  - main
-  - dev
-
-
 engine:
   name: tofu
-
-dirs:
-  '**/*.tf':
-    lock_branch_target: dest_branch2
