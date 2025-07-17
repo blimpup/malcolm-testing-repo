@@ -2,7 +2,7 @@
 # .gitlab-ci.yml - Using the terrateam template
 
 include:
-  - project: 'malcolm-terrateam-test/terrateam-template'
+  - project: 'terrateam/terrateam-template'
     file: 'terrateam-template.yml'
 
 stages:
