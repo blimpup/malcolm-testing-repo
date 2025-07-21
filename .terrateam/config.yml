@@ -1,2 +1,57 @@
+dirs:
+  '*/**/terragrunt.hcl':
+    when_modified:
+      file_patterns:
+      - ${DIR}/*.hcl
+      - ${DIR}/*.tf
 engine:
-  name: tofu
+  name: terragrunt
+  tf_cmd: tofu
+when_modified:
+  file_patterns: []
+workflows:
+- apply:
+  - type: init
+  - type: apply
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version
+    type: run
+  engine:
+    name: terragrunt
+    tf_cmd: tofu
+  plan:
+  - cmd:
+    - terragrunt
+    - terragrunt-info
+    type: run
+  - type: init
+  - type: plan
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version
+    type: run
+  tag_query: dir:prod/us-east-1/prod/volume
+- apply:
+  - type: init
+  - type: apply
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version
+    type: run
+  plan:
+  - cmd:
+    - terragrunt
+    - terragrunt-info
+    type: run
+  - type: init
+  - type: plan
+  - cmd:
+    - bash
+    - -c
+    - terragrunt --version
+    type: run
+  tag_query: dir:prod/us-east-1/prod/compute
