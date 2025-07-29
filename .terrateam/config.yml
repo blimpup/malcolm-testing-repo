@@ -1,2 +1,10 @@
 engine:
   name: tofu
+
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['env']
+      - type: run
+        cmd: ['${TERRATEAM_ROOT}/foo.sh']
