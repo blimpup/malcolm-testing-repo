@@ -1,2 +1,7 @@
+stacks:
+  name:
+    mystack:
+      tag_query: ''
+
 engine:
   name: tofu
