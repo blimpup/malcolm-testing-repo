@@ -1,2 +1,13 @@
+stacks:
+  names:
+    mystack:
+      tag_query: ''
+
 engine:
   name: tofu
+
+workflows:
+  - tag_query: 'stack_name:mystack'
+    plan:
+      - type: run
+        cmd: ['exit', '1']
