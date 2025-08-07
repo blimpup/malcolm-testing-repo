@@ -1,2 +1,41 @@
 engine:
   name: tofu
+
+dirs:
+  '.':
+    workspaces:
+      my-special-workspace:
+        when_modified:
+          file_patterns: ['my-special-config.yml']
+
+workflows:
+  - tag_query: 'workspace:my-special-workspace'
+    lock_policy: none
+    engine:
+      name: custom
+    plan:
+      - type: run
+        cmd: ['false']
+        ignore_errors: true
+        on_error:
+          - type: gate
+            token: my-special-config
+            all_of: ['user:terrateam-test-user02']
+      - type: init
+      - type: plan
+
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['false']
+        ignore_errors: true
+        on_error:
+          - type: gate
+            token: foobar
+            all_of: ['user:terrateam-test-user02']
+      - type: init
+      - type: plan
+          
+
+cost_estimation:
+  enabled: false
