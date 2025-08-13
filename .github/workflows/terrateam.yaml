@@ -5,7 +5,7 @@
  #
  # Looking for the Terrateam configuration file? .terrateam/config.yml.
  #
- # See https://docs.terrateam.io/configuration/overview for details
+ # See https://terrateam.io/docs/configuration for details
  ##########################################################################
  name: 'Terrateam Workflow'
  on:
@@ -29,7 +29,7 @@
        - uses: actions/checkout@v4
        - name: Run Terrateam Action
          id: terrateam
-         uses: terrateamio/action@716-fix-cost-estimation-gitlab
+         uses: terrateamio/action@v1
          with:
            work-token: '${{ github.event.inputs.work-token }}'
            api-base-url: '${{ github.event.inputs.api-base-url }}'
