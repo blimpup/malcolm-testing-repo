@@ -3,6 +3,6 @@ apply_requirements:
     - tag_query: ''
       approved:
         any_of_count: 0
-        enabled: false
+        enabled: true
 engine:
   name: tofu
