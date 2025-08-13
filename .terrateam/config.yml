@@ -5,3 +5,5 @@ apply_requirements:
       enabled: true
 engine:
   name: tofu
+when_modified:
+  autoapply: true
