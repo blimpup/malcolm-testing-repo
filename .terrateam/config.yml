@@ -8,6 +8,6 @@ apply_requirements:
 
 engine:
   name: tofu
-
+  
 when_modified:
   autoapply: true
