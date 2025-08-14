@@ -1,2 +1,11 @@
 engine:
   name: tofu
+
+
+dirs:
+  tf:
+    workspaces:
+      one:
+        tags: [one]
+      two:
+        tags: [two]
