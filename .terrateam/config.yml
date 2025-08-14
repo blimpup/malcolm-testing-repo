@@ -1,2 +1,19 @@
 engine:
   name: tofu
+
+
+dirs:
+  tf:
+    create_and_select_workspace: false
+    workspaces:
+      one:
+        tags: [one]
+      two:
+        tags: [two]
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+        extra_args: ['-backend-config=backend_${TERRATEAM_WORKSPACE}.conf']
+      - type: plan
