@@ -6,3 +6,6 @@ destination_branches:
 engine:
   name: tofu
 
+dirs:
+  '**/*.tf':
+    lock_branch_target: dest_branch
