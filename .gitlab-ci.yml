@@ -1,12 +1,13 @@
-
 # .gitlab-ci.yml - Using the terrateam template
 
 include:
-  - project: 'terrateam/terrateam-template'
-    file: 'terrateam-template.yml'
+  - project: 'malcolm-terrateam-test/terrateam-template'
+    file: 'terrateam-template-dev.yml'
 
 stages:
   - terrateam
 
 terrateam_job:
   extends: .terrateam_template
+  variables:
+    ACTION_BRANCH: 678-fix-workspace-isolation
