@@ -1,2 +1,8 @@
 engine:
   name: tofu
+
+dirs:
+  '**/*.tf':
+    workspaces:
+      'this-is-a-long-name-for-a-workspace-tree-that-should-definitely-go-over-length-and-the-system-should-handle-it-fine-but-this-will-be-a-test-of-that-functionaity':
+        tags: [test]
