@@ -1,2 +1,16 @@
 engine:
   name: tofu
+
+hooks:
+  plan:
+    pre:
+      - type: run
+        cmd: ['false']
+        ignore_errors: true
+        on_error:
+          - type: gate
+            token: foobar
+            all_of: ['user:terrateam-test-user02']
+
+cost_estimation:
+  enabled: false
