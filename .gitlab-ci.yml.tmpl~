@@ -1,4 +1,12 @@
+#! /usr/bin/env bash
 
+set -e
+set -u
+set -o pipefail
+
+ACTION_BRANCH="${TERRAT_ACTION_BRANCH:-v1}"
+
+cat << EOF > "$1"
 # .gitlab-ci.yml - Using the terrateam template
 
 include:
@@ -10,3 +18,6 @@ stages:
 
 terrateam_job:
   extends: .terrateam_template
+  variables:
+    ACTION_BRANCH: 
+EOF
