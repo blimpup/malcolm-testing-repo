@@ -1,2 +1,13 @@
 engine:
   name: tofu
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+      - type: plan
+      - type: checkov
+          
+
+cost_estimation:
+  enabled: false
