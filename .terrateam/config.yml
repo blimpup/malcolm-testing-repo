@@ -1,2 +1,24 @@
 engine:
-  name: tofu
+  name: terraform
+workflows:
+- apply:
+  - type: init
+  - type: apply
+  - cmd:
+    - test
+    - ${TERRATEAM_TF_CMD}
+    - '='
+    - tofu
+    type: run
+  engine:
+    name: tofu
+  plan:
+  - type: init
+  - type: plan
+  - cmd:
+    - test
+    - ${TERRATEAM_TF_CMD}
+    - '='
+    - tofu
+    type: run
+  tag_query: dir:tf
