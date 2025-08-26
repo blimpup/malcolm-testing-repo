@@ -1,2 +1,41 @@
 engine:
   name: tofu
+  version: 1.6.3
+workflows:
+- apply:
+  - type: init
+  - type: apply
+  - cmd:
+    - bash
+    - -c
+    - ${TERRATEAM_TF_CMD} version | grep "1.6.1"
+    type: run
+  engine:
+    name: tofu
+    version: 1.6.1
+  plan:
+  - type: init
+  - type: plan
+  - cmd:
+    - bash
+    - -c
+    - ${TERRATEAM_TF_CMD} version | grep "1.6.1"
+    type: run
+  tag_query: dir:tf
+- apply:
+  - type: init
+  - type: apply
+  - cmd:
+    - bash
+    - -c
+    - ${TERRATEAM_TF_CMD} version | grep "1.6.3"
+    type: run
+  plan:
+  - type: init
+  - type: plan
+  - cmd:
+    - bash
+    - -c
+    - ${TERRATEAM_TF_CMD} version | grep "1.6.3"
+    type: run
+  tag_query: dir:tf1
