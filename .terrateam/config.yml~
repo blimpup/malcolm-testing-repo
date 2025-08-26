@@ -1,6 +1,5 @@
 engine:
   name: tofu
-  version: '1.6'
 hooks:
   all:
     pre:
