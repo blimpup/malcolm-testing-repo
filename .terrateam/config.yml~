@@ -3,7 +3,7 @@ stacks:
     stack1:
       tag_query: 'dir:tf1'
       rules:
-        plan_after:
+        apply_after:
           - stack2
     stack2:
       tag_query: 'dir:tf2'
