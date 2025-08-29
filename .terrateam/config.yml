@@ -1,7 +1,6 @@
-apply_requirements:
-  checks:
-    approved:
-      count: 1
-      enabled: true
+automerge:
+  enabled: true
+  delete_branch: true 
+
 engine:
   name: tofu
