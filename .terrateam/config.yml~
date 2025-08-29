@@ -1,13 +1,9 @@
 stacks:
   names:
     mystack:
-      tag_query: 'dir:tf1'
+      tag_query: ''
       variables:
         MY_STACK_VARIABLE: 'this-is-my-stack-variable'
-    myotherstack:
-      tag_query: 'dir:tf2'
-      variables:
-        MY_STACK_VARIABLE: 'this-is-my-other-stack-variable'
 
 engine:
   name: tofu
