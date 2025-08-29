@@ -1,2 +1,19 @@
+stacks:
+  names:
+    mystack:
+      tag_query: ''
+      variables:
+        MY_STACK_VARIABLE: 'this-is-my-stack-variable'
+
 engine:
   name: tofu
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['echo', '${MY_STACK_VARIABLE}']
+      - type: run
+        cmd: ['test', '-n', '']
+      - type: init
+      - type: plan
