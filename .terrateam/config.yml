@@ -1,11 +1,5 @@
-apply_requirements:
-  checks:
-    approved:
-      count: 1
-      enabled: true
+drift:
+  enabled: false
+  schedule: hourly
 engine:
   name: tofu
-
-default_branch_overrides:
-  - access_control
-  - destination_branches
