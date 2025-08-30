@@ -1,0 +1,8 @@
+#! /usr/bin/env bash
+
+bar_value="$1"
+baz_value="$2"
+
+# BAR will not be set because output is discarded.
+printf "BAR=$bar_value\0"
+export BAZ="$baz_value"
