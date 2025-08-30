@@ -9,7 +9,7 @@ stacks:
       tag_query: 'dir:tf2'
       rules:
         modified_by:
-          - tf3
+          - tf1
 
 engine:
   name: tofu
