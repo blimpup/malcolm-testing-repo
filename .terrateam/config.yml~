@@ -3,10 +3,8 @@ stacks:
     stack1:
       tag_query: 'dir:tf1'
       rules:
-        modified_by:
+        plan_after:
           - stack2
-        plan_after: []
-        apply_after: []
     stack2:
       tag_query: 'dir:tf2'
 
