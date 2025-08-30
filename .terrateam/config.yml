@@ -1,2 +1,46 @@
 engine:
   name: tofu
+workflows:
+- apply:
+  - cmd:
+    - ${TERRATEAM_ROOT}/set-bar-baz
+    - FOO
+    - ZOOM
+    method: source
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    run_on: always
+    type: run
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAZ
+    run_on: always
+    type: run
+  - type: init
+  - type: apply
+  plan:
+  - cmd:
+    - ${TERRATEAM_ROOT}/set-bar-baz
+    - FOO
+    - ZOOM
+    method: source
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    run_on: always
+    type: run
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAZ
+    run_on: always
+    type: run
+  - type: init
+  - type: plan
+  tag_query: ''
