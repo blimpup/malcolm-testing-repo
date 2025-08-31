@@ -1,2 +1,6 @@
 engine:
   name: tofu
+
+workflows:
+  - tag_query: ''
+    environment: butthole
