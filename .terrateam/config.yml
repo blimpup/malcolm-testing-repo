@@ -1,2 +1,12 @@
 engine:
-  name: tofu
+  name: terraform
+  version: 'latest-allowed'
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['${TERRATEAM_TF_CMD}', '--version']
+        visible_on: always
+      - type: init
+      - type: plan
