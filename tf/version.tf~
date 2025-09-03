@@ -1,0 +1,3 @@
+terraform {
+  requird_version = "1.6.9"
+}
