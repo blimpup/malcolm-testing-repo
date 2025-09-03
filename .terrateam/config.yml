@@ -1,2 +1,9 @@
 engine:
   name: tofu
+when_modified:
+  autoplan: false
+hooks:
+  plan:
+    pre:
+      - type: run
+        cmd: ['dd', 'if=/dev/random', 'of=/tmp/mediumfile', 'bs=1024k', 'count=5']
