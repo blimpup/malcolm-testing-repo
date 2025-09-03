@@ -1,2 +1,23 @@
 engine:
   name: tofu
+hooks:
+  all:
+    pre:
+    - cmd:
+      - test
+      - ${TERRATEAM_TF_CMD}
+      - '='
+      - tofu
+      type: run
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: env
+        name: 'TENV_TOFU_DEFAULT_VERSION'
+        cmd: ['echo', 'latest-allowed']
+      - type: run
+        cmd: ['${TERRATEAM_TF_CMD}', '--version']
+        visible_on: always
+      - type: init
+      - type: plan
