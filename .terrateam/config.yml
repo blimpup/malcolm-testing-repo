@@ -1,2 +1,16 @@
+cost_estimation:
+  enabled: false
+
 engine:
-  name: tofu
+  name: terraform
+  version: 1.3.7
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['terraform', 'fmt', '-diff', '-check']
+      - type: init
+      - type: plan
+
+parallel_runs: 10
