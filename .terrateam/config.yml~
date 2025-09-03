@@ -9,9 +9,3 @@ hooks:
       - '='
       - tofu
       type: run
-
-workflows:
-  - tag_query: ''
-    plan:
-      - type: run
-        cmd: ['${TERRATEAM_TF_CMD}', '--version']
