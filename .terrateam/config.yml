@@ -1,2 +1,21 @@
 engine:
   name: tofu
+  version: 'latest-allowed'
+hooks:
+  all:
+    pre:
+    - cmd:
+      - test
+      - ${TERRATEAM_TF_CMD}
+      - '='
+      - tofu
+      type: run
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['${TERRATEAM_TF_CMD}', '--version']
+        visible_on: always
+      - type: init
+      - type: plan
