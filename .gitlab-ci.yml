@@ -10,4 +10,4 @@ stages:
 terrateam_job:
   extends: .terrateam_template
   variables:
-    ACTION_BRANCH: 270-add-json-diff-representation
+    ACTION_BRANCH: 778-add-gate-approvals
