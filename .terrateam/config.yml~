@@ -9,7 +9,7 @@ workflows:
         ignore_errors: true
         on_error:
           - type: gate
-            name: 'This is a gate'
+            token: foobar
             all_of: ['user:terrateam-test-user02']
       - type: init
       - type: plan
