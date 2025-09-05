@@ -1,0 +1,5 @@
+package terraform
+
+team1 if {
+	count([r | r := input.resource_changes[_]; startswith("team1-", r.name); r.change.actions[_] == "create"]) == 0
+}
