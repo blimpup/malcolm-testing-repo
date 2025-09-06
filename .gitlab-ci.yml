@@ -10,4 +10,4 @@ stages:
 terrateam_job:
   extends: .terrateam_template
   variables:
-    ACTION_BRANCH: 778-add-gate-approvals
+    ACTION_BRANCH: 778-add-bulk-gates
