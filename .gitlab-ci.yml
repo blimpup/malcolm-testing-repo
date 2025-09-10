@@ -1,13 +1,10 @@
-# .gitlab-ci.yml - Using the terrateam template
 
 include:
   - project: 'malcolm-terrateam-test/terrateam-template'
-    file: 'terrateam-template-dev.yml'
+    file: 'terrateam-template.yml'
 
 stages:
   - terrateam
 
 terrateam_job:
   extends: .terrateam_template
-  variables:
-    ACTION_BRANCH: 270-add-json-diff-representation
