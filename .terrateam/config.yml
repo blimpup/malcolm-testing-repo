@@ -1,9 +1,6 @@
-apply_requirements:
-  checks:
-  - approved:
-      any_of:
-      - user:terrateam-test-user01
-      enabled: true
-    tag_query: ''
+automerge:
+  enabled: true
+  delete_branch: true 
+
 engine:
   name: tofu
