@@ -1,14 +1,9 @@
 stacks:
   names:
-    nesting:
-      stacks:
-        - mystack
-
-      variables:
-        ENV: production
-
     mystack:
       tag_query: ''
+      variables:
+        ENV: production
 
 engine:
   name: tofu
