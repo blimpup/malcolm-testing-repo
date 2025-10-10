@@ -1,14 +1,11 @@
 stacks:
   names:
-    foo:
-      tag_query: 'anything'
-
     nesting:
       stacks:
         - mystack
 
       variables:
-        env: production
+        ENV: production
 
     mystack:
       tag_query: ''
@@ -17,9 +14,8 @@ engine:
   name: tofu
 
 workflows:
-  - tag_query: 'stack_name:foo'
-  - tag_query: 'stack_name:nesting'
-    environment: '${env}'
+  - tag_query: 'stack_name:mystack'
+    environment: '${ENV}'
     plan:
       - type: run
         cmd: ['thisprogramdoesnotexist']
