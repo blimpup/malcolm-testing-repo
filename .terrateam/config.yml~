@@ -1,0 +1,21 @@
+stacks:
+  names:
+    nesting:
+      stacks:
+        - mystack
+
+      variables:
+        ENV: production
+
+    mystack:
+      tag_query: ''
+
+engine:
+  name: tofu
+
+workflows:
+  - tag_query: 'stack_name:mystack'
+    environment: '${ENV}'
+    plan:
+      - type: run
+        cmd: ['thisprogramdoesnotexist']

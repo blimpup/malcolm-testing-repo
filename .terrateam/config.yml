@@ -1,2 +1,137 @@
-engine:
-  name: tofu
+stacks:
+  names:
+    # Ansible
+    ansible:
+      tag_query: 'dir:ansible'
+
+      rules:
+        auto_apply: true   # Automatically apply if all apply requirements pass
+        modified_by:
+          - production
+
+    # Base infrastructure
+    base-networking:
+      tag_query: 'dir:base/networking'
+
+    base:
+      stacks:
+        - base-networking
+    
+    # Development layers
+    dev-database:
+      tag_query: 'dir:dev/database'
+      variables:
+        layer: database
+
+    dev-compute:
+      tag_query: 'dir:dev/compute'
+      variables:
+        layer: compute
+      rules:
+        plan_after:
+          - dev-database  # Must wait for database
+
+    dev-application:
+      tag_query: 'dir:dev/application'
+      variables:
+        layer: application
+      rules:
+        plan_after:
+          - dev-compute  # Must wait for compute
+
+    dev:
+      stacks:
+        - dev-database
+        - dev-compute
+        - dev-application
+
+      variables:
+        environment: development
+
+      rules:
+        auto_apply: true
+        modified_by:
+          - base
+
+    # Staging layers
+    staging-database:
+      tag_query: 'dir:staging/database'
+      variables:
+        layer: database
+
+    staging-compute:
+      tag_query: 'dir:staging/compute'
+      variables:
+        layer: compute
+      rules:
+        plan_after:
+          - staging-database  # Must wait for database
+
+    staging-application:
+      tag_query: 'dir:staging/application'
+      variables:
+        layer: application
+      rules:
+        plan_after:
+          - staging-compute  # Must wait for compute
+
+    staging:
+      stacks:
+        - staging-database
+        - staging-compute
+        - staging-application
+
+      variables:
+        environment: staging
+
+      rules:
+        apply_after:
+          - dev
+        modified_by:
+          - base
+
+    # Production layers
+    production-database:
+      tag_query: 'dir:production/database'
+      variables:
+        layer: database
+
+    production-compute:
+      tag_query: 'dir:production/compute'
+      variables:
+        layer: compute
+      rules:
+        plan_after:
+          - production-database  # Must wait for database
+
+    production-application:
+      tag_query: 'dir:production/application'
+      variables:
+        layer: application
+      rules:
+        plan_after:
+          - production-compute  # Must wait for compute
+
+    production:
+      stacks:
+        - production-database
+        - production-compute
+        - production-application
+
+      variables:
+        environment: production
+
+      rules:
+        apply_after:
+          - staging
+        modified_by:
+          - base
+        
+workflows:
+  - tag_query: 'stack_name:ansible'
+    engine:
+      name: custom
+      plan: ['${TERRATEAM_ROOT}/bin/ansible-plan']
+      apply: ['${TERRATEAM_ROOT}/bin/ansible-apply']
+  - tag_query: ''
+    environment: '${environment}'
