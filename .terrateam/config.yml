@@ -1,5 +1,2 @@
 engine:
   name: tofu
-
-destination_branches:
-  - testing
