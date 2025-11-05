@@ -1,2 +1,7 @@
 engine:
   name: tofu
+
+dirs:
+  .:
+    workspaces:
+      foo: {}
