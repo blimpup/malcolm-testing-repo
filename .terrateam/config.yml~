@@ -400,16 +400,16 @@ stacks:
 
 
 
-# workflows:
-#   # Common workflow for all dirspaces. Leverages parameterised tfvars input
-#   - tag_query: fnd
-#     plan:
-#       - type: init
-#       - type: plan
-#         extra_args: ["-var-file=tfvars/${TERRATEAM_WORKSPACE}.tfvars"]
-#     apply:
-#       - type: init
-#       - type: apply
+workflows:
+  # Common workflow for all dirspaces. Leverages parameterised tfvars input
+  - tag_query: fnd
+    plan:
+      - type: init
+      - type: plan
+        extra_args: ["-var-file=tfvars/${TERRATEAM_WORKSPACE}.tfvars"]
+    apply:
+      - type: init
+      - type: apply
 
 
 
