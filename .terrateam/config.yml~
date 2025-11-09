@@ -5,12 +5,12 @@ stacks:
     network:
       tag_query: 'dir:network'
       rules:
-        apply_after:
+        plan_after:
           - base
     service:
       tag_query: 'dir:service'
       rules:
-        apply_after:
+        plan_after:
           - network
 
 engine:
