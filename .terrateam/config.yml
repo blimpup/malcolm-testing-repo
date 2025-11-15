@@ -1,8 +1,8 @@
-drift:
+config_builder:
   enabled: true
-  schedule: hourly
+  script: |
+    #! /usr/bin/env bash
+    echo '{"indexer": {"enabled": true}}'
+
 engine:
   name: tofu
-
-batch_runs:
-  enabled: true
