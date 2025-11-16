@@ -1,13 +1,8 @@
 tree_builder:
   enabled: true
-  script: '${TERRATEAM_ROOT}/bin/generate build-tree'
+  script: |
+    #! /usr/bin/env bash
+    $TERRATEAM_ROOT/bin/tree-builder
 
-config_builder:
-  enabled: true
-  script: '${TERRATEAM_ROOT}/bin/generate build-config'
-
-hooks:
-  all:
-    pre:
-      - type: run
-        cmd: ['${TERRATEAM_ROOT}/bin/generate', 'build']
+engine:
+  name: tofu
