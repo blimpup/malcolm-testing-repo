@@ -1,13 +1,6 @@
-apply_requirements:
-  create_pending_apply_check: false
-  checks:
-    - tag_query: ''
-      approved:
-        enabled: true
-        any_of_count: 1000
+automerge:
+  enabled: true
+  delete_branch: true 
 
 engine:
   name: tofu
-  
-when_modified:
-  autoapply: true
