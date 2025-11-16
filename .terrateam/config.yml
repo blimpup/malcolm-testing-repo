@@ -1,8 +1,2 @@
-destination_branches:
-  - main
-  - dev
-
-
 engine:
   name: tofu
-
