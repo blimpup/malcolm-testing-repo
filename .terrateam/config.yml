@@ -1,2 +1,17 @@
+dirs:
+  '**/main.ts':
+    stacks:
+      cdktf-stack1:
+        tags: []
+      cdktf-stack2:
+        tags: []
+    tags:
+    - cdktf
+    when_modified:
+      file_patterns:
+      - ${DIR}/*.ts
 engine:
   name: tofu
+workflows:
+- cdktf: true
+  tag_query: cdktf
