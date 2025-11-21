@@ -1,2 +1,10 @@
+dirs:
+  terraform/**:
+    when_modified:
+      file_patterns: []
+  terraform/projects/**/environment/**/*.tf:
+    when_modified:
+      file_patterns:
+      - ${DIR}/*.tf
 engine:
   name: tofu
