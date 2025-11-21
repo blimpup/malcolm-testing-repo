@@ -1,2 +1,41 @@
+dirs:
+  tf:
+    create_and_select_workspace: false
+    tags:
+    - tf
+    workspaces:
+      workspace1:
+        tags:
+        - workspace1
+        when_modified:
+          file_patterns:
+          - ${DIR}/*.tf
+          - ${DIR}/*.tfvars
+          - '!${DIR}/workspace2.tfvars'
+      workspace2:
+        tags:
+        - workspace2
+        when_modified:
+          file_patterns:
+          - ${DIR}/*.tf
+          - ${DIR}/*.tfvars
+          - '!${DIR}/workspace1.tfvars'
 engine:
   name: tofu
+workflows:
+- plan:
+  - extra_args:
+    - -backend-config=backend-workspace1.conf
+    type: init
+  - extra_args:
+    - -var-file=workspace1.tfvars
+    type: plan
+  tag_query: tf workspace1
+- plan:
+  - extra_args:
+    - -backend-config=backend-workspace2.conf
+    type: init
+  - extra_args:
+    - -var-file=workspace2.tfvars
+    type: plan
+  tag_query: tf workspace2
