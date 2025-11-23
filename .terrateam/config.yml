@@ -1,2 +1,26 @@
 engine:
   name: tofu
+tags:
+  branch:
+    test: test
+  dest_branch:
+    main: ^main$
+workflows:
+- apply:
+  - type: init
+  - type: apply
+  plan:
+  - type: init
+  - type: plan
+  tag_query: dest_branch:main and branch:test
+- apply:
+  - cmd:
+    - exit
+    - '1'
+    type: run
+  plan:
+  - cmd:
+    - exit
+    - '1'
+    type: run
+  tag_query: ''
