@@ -5,7 +5,3 @@ apply_requirements:
       enabled: true
 engine:
   name: tofu
-
-default_branch_overrides:
-  - access_control
-  - destination_branches
