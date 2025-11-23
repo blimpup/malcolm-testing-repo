@@ -1,2 +1,12 @@
 engine:
   name: tofu
+  version: '1.6'
+hooks:
+  all:
+    pre:
+    - cmd:
+      - test
+      - ${TERRATEAM_TF_CMD}
+      - '='
+      - tofu
+      type: run
