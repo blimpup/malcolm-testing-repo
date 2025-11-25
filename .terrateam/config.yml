@@ -1,5 +1,5 @@
 engine:
   name: tofu
 workflows:
-- lock_policy: merge
+- lock_policy: apply
   tag_query: dir:tf
