@@ -10,4 +10,4 @@ stages:
 terrateam_job:
   extends: .terrateam_template
   variables:
-    ACTION_BRANCH: 1031-add-support-runtime-updating-prehooks
+    ACTION_BRANCH: 1032-add-support-disable-collecting-outputs
