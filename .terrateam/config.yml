@@ -1,2 +1,7 @@
+hooks:
+  all:
+    pre:
+      - type: update_terrateam_github_token
+
 engine:
   name: tofu
