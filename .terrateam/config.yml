@@ -1,9 +1,6 @@
-apply_requirements:
-  create_pending_apply_check: false
-  checks:
-    - tag_query: ''
-      apply_after_merge:
-        enabled: true
+automerge:
+  enabled: true
+  delete_branch: true 
 
 engine:
   name: tofu
