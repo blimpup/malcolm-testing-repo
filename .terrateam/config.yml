@@ -1,2 +1,8 @@
+access_control:
+  enabled: true
+  unlock:
+  - foo:bar
 engine:
   name: tofu
+indexer:
+  enabled: true
