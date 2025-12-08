@@ -1,3 +1,5 @@
 engine:
   name: tofu
+indexer:
+  enabled: true
 parallel_runs: 1
