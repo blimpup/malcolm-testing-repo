@@ -1,12 +1,7 @@
 dirs:
-  modules/**/*.tf:
-    when_modified:
-      file_patterns: []
   tf:
     when_modified:
       file_patterns:
-      - tf/**.tf
-      - modules/**
-      - '!modules/ignore/*.tf'
+      - $DIR/*.tf
 engine:
   name: tofu
