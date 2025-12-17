@@ -12,6 +12,8 @@ dirs:
         - workspace2
 engine:
   name: tofu
+indexer:
+  enabled: true
 workflows:
 - plan:
   - extra_args:
