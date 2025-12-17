@@ -1,3 +1,7 @@
+dirs:
+  tf_blank:
+    when_modified:
+      file_patterns: []
 engine:
   name: tofu
 indexer:
