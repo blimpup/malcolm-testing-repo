@@ -1,5 +1,7 @@
 engine:
   name: tofu
+indexer:
+  enabled: true
 workflows:
 - lock_policy: none
   tag_query: dir:tf
