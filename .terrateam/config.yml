@@ -1,8 +1,7 @@
-tree_builder:
+automerge:
   enabled: true
-  script: |
-    #! /usr/bin/env bash
-    $TERRATEAM_ROOT/bin/tree-builder
+  delete_branch: true 
+  merge_strategy: rebase
 
 engine:
   name: tofu
