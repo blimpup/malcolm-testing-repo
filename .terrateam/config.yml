@@ -1,2 +1,18 @@
 engine:
   name: tofu
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+      - type: plan
+      - type: opa
+        fail_on: defined
+        extra_args: ['-d', 'policy.rego', 'data.terraform.team1']
+        gate:
+          all_of: ['user:terrateam-test-user02']
+          name: 'Team1 Resources'
+          
+
+cost_estimation:
+  enabled: false
