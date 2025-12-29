@@ -1,10 +1,8 @@
 access_control:
   enabled: true
   policies:
-  - plan:
-    - '*'
-    tag_query: ''
-engine:
-  name: tofu
-when_modified:
-  autoplan: false
+  - tag_query: ''
+    plan: ['*']
+    apply: []
+    superapproval: ['user:terrateam-test-user01']
+    apply_with_superapproval: ['user:terrateam-test-user02']
