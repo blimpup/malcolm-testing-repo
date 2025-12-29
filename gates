@@ -1,0 +1,19 @@
+#! /usr/bin/env python3
+import json
+
+gates = {
+    'gates': [
+        {
+            'any_of': ['user:terrateam-test-user02'],
+            'any_of_count': 1,
+            'add_reviewers': True,
+        },
+        {
+            'token': 'test',
+            'any_of': ['user:terrateam-test-user02'],
+            'any_of_count': 1,
+        }
+    ]
+}
+
+print(json.dumps(gates))
