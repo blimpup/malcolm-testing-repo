@@ -1,8 +1,2 @@
-access_control:
-  enabled: true
-  policies:
-  - plan:
-    - repo:write
-    tag_query: ''
 engine:
   name: tofu
