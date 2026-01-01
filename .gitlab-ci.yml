@@ -1,6 +1,6 @@
 
 include:
-  - project: 'malcolm-terrateam-test/terrateam-template'
+  - project: 'terrateam-io/terrateam-template'
     file: 'terrateam-template.yml'
 
 stages:
