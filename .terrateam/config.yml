@@ -1,7 +1,9 @@
-apply_requirements:
-  checks:
-    approved:
-      count: 1
-      enabled: true
+config_builder:
+  enabled: true
+  script: '#! /usr/bin/env bash
+
+    echo ''{}''
+
+    '
 engine:
   name: tofu
