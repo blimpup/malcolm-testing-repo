@@ -1,2 +1,6 @@
-engine:
-  name: tofu
+definitions:
+  default_engine: &default_engine
+    name: tofu
+
+engine: *default_engine
+
