@@ -1,6 +1,4 @@
-automerge:
-  enabled: true
-  delete_branch: true
-
 engine:
   name: tofu
+when_modified:
+  autoplan: false
