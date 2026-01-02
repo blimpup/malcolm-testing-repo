@@ -1,11 +1,7 @@
-config_builder:
-  enabled: true
-  script: |
-    #! /usr/bin/env bash
-    echo '{"indexer": {"enabled": true}}'
-
+apply_requirements:
+  checks:
+    approved:
+      count: 1
+      enabled: true
 engine:
   name: tofu
-
-when_modified:
-  autoplan: false
