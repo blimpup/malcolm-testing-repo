@@ -7,7 +7,7 @@
  #
  # See https://docs.terrateam.io/configuration/overview for details
  ##########################################################################
- name: 'Not Terrateam Workflow'
+ name: 'Terrateam Workflow'
  on:
    workflow_dispatch:
      inputs:
