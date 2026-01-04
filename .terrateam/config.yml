@@ -1,2 +1,12 @@
 engine:
-  name: tofu
+  name: terraform
+  override_tf_cmd: '${TERRATEAM_ROOT}/bin/terraform-wrapper'
+hooks:
+  all:
+    pre:
+    - cmd:
+      - test
+      - ${TERRATEAM_TF_CMD}
+      - '='
+      - '${TERRATEAM_ROOT}/bin/terraform-wrapper'
+      type: run
