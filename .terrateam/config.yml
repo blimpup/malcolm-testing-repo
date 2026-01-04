@@ -1,12 +1,4 @@
 access_control:
-  enabled: true
-  policies:
-  - apply:
-    - '*'
-    plan:
-    - '*'
-    tag_query: ''
-  terrateam_config_update:
-  - team:terrateam-test-team01
+  enabled: false
 engine:
   name: tofu
