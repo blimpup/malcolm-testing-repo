@@ -1,2 +1,6 @@
+notifications:
+  policies:
+    - tag_query: ''
+
 engine:
   name: tofu
