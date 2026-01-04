@@ -1,6 +1,3 @@
-cost_estimation:
-  enabled: false
-
 tree_builder:
   enabled: true
   script: '${TERRATEAM_ROOT}/bin/generate build-tree'
