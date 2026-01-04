@@ -1,2 +1,30 @@
 engine:
   name: tofu
+workflows:
+- apply:
+  - cmd:
+    - echo
+    - FOO
+    name: BAR
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    type: run
+  - type: init
+  - type: apply
+  plan:
+  - cmd:
+    - echo
+    - FOO
+    name: BAR
+    type: env
+  - capture_output: true
+    cmd:
+    - ${TERRATEAM_ROOT}/expect-env
+    - BAR
+    type: run
+  - type: init
+  - type: plan
+  tag_query: ''
