@@ -1,2 +1,14 @@
 engine:
   name: tofu
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+      - type: plan
+      - type: gates
+        cmd: ['${TERRATEAM_ROOT}/gates']
+          
+
+cost_estimation:
+  enabled: false
