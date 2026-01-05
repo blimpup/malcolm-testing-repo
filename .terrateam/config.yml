@@ -1,7 +1,2 @@
-notifications:
-  policies:
-    - tag_query: ''
-      comment_strategy: 'delete'
-
 engine:
   name: tofu
