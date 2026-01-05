@@ -1,10 +1,14 @@
 access_control:
+  apply_require_all_dirspace_access: false
   enabled: true
-  plan_require_all_dirspace_access: true
   policies:
-  - plan: []
+  - apply: []
+    plan:
+    - '*'
     tag_query: dir:tf2
-  - plan:
+  - apply:
+    - '*'
+    plan:
     - '*'
     tag_query: ''
 engine:
