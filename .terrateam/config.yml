@@ -1,8 +1,8 @@
 access_control:
   enabled: true
   policies:
-  - apply:
-    - repo:admin
+  - plan:
+    - repo:maintain
     tag_query: ''
 engine:
   name: tofu
