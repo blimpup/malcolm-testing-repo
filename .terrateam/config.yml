@@ -1,2 +1,15 @@
 engine:
   name: tofu
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+      - type: plan
+      - type: conftest
+        gate:
+          token: null_resource
+          all_of: ['user:terrateam-test-user02']
+
+cost_estimation:
+  enabled: false
