@@ -1,11 +1,2 @@
-access_control:
-  enabled: true
-  policies:
-  - plan:
-    - repo:admin
-    tag_query: dir:tf
-  - plan:
-    - '*'
-    tag_query: dir:tf1
 engine:
   name: tofu
