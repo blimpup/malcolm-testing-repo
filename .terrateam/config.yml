@@ -1,5 +1,4 @@
 access_control:
-  apply_require_all_dirspace_access: false
   enabled: true
   policies:
   - apply: []
