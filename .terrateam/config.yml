@@ -1,2 +1,127 @@
+# https://docs.terrateam.io/configuration-reference/automerge/
+automerge: #upon applying all changes in a pull request
+  enabled: true #automatically merge the pull request
+  delete_branch: true # and delete the branch
+
+# https://docs.terrateam.io/configuration-reference/destination-branches/
+destination_branches:
+  - branch: '*'
+    source_branches: [ '*' ]
+
+# We are currently pinned on terraform 1.5.7, to get updates we'd need to switch to OpenTofu
+# See https://pkbdev.atlassian.net/browse/DPL-1239
 engine:
-  name: tofu
+  name: terraform
+  version: 1.5.7
+
+# https://terrateam.io/docs/configuration-reference/indexer/
+indexer:
+  enabled: true
+
+# https://docs.terrateam.io/security-and-compliance/role-based-access-control/
+# Apply prod changes only when also phr-admins approve
+access_control:
+  policies:
+    - tag_query: 'dev'
+      plan: ['*']
+      apply: ['team:dev']
+    - tag_query: 'not dev'
+      plan: ['*']
+      apply: ['team:phr-admins']
+      apply_with_superapproval: ['team:dev']
+      superapproval: ['team:phr-admins']
+
+# https://docs.terrateam.io/configuration-reference/dirs/
+dirs:
+  # Do not run for modules
+  apps/**/*:
+    when_modified:
+      file_patterns: []
+  pkb-end2end/**/*:
+    when_modified:
+      file_patterns: []
+  # Don't run it for uat-ng for now
+  terraform/deployment/uat-ng/infra/*:
+    when_modified:
+      file_patterns: []
+  terraform/deployment/uat-ng/instance/*:
+    when_modified:
+      file_patterns: []
+  terraform/deployment/**/config/*:
+    when_modified:
+      file_patterns: [ ]
+  terraform/modules/**/*:
+    when_modified:
+      file_patterns: []
+  terraform/**/modules/**/*:
+    when_modified:
+      file_patterns: [ ]
+  terraform/symlinks/**/*:
+    when_modified:
+      file_patterns: [ ]
+  # Don't run for E2E
+  terraform/deployment/e2e/**/*:
+    when_modified:
+      file_patterns: []
+  terraform/deployment/e2e/infra/*:
+    when_modified:
+      file_patterns: []
+  terraform/deployment/e2e/instance/*:
+    when_modified:
+      file_patterns: []
+  terraform/deployment/nats-only/**/*:
+    when_modified:
+      file_patterns: []
+
+  # Tag for "plan-only" directories - ones applied by release process not terrateam
+  terraform/deployment/**/infra/*:
+    tags: [ plan-only ]
+  terraform/deployment/**/instance/*:
+    tags: [ plan-only ]
+
+# https://docs.terrateam.io/configuration-reference/workflows/
+workflows:
+  # For our deployments, we use terrateam just to produce a plan and comment on PRs (for ease of review)
+  - tag_query: "plan-only"
+    plan:
+      - type: env
+        method: source
+        cmd: ['$TERRATEAM_ROOT/.terrateam/scripts/environment.sh']
+        sensitive: true
+      - type: oidc
+        provider: gcp
+        service_account: ${GCP_SERVICE_ACCOUNT}
+        workload_identity_provider: ${GCP_WORKLOAD_IDENTITY_PROVIDER}
+      - type: init
+      - type: env
+        method: source
+        cmd: ['$TERRATEAM_ROOT/terraform/deployment/custom-stack/scripts/terrateam-diff-init.sh']
+      - type: plan
+    apply:
+      - type: run
+        cmd: [ "echo", "This directory cannot be applied; it is plan-only" ]
+      - type: run
+        cmd: [ "exit 1" ]
+  - tag_query: "not plan-only"
+    plan:
+      - type: env
+        method: source
+        cmd: ['$TERRATEAM_ROOT/.terrateam/scripts/environment.sh']
+        sensitive: true
+      - type: oidc
+        provider: gcp
+        service_account: ${GCP_SERVICE_ACCOUNT}
+        workload_identity_provider: ${GCP_WORKLOAD_IDENTITY_PROVIDER}
+      - type: init
+      - type: plan
+    apply:
+      - type: env
+        method: source
+        cmd: [ '$TERRATEAM_ROOT/.terrateam/scripts/environment.sh' ]
+        sensitive: true
+      - type: oidc
+        provider: gcp
+        service_account: ${GCP_SERVICE_ACCOUNT}
+        workload_identity_provider: ${GCP_WORKLOAD_IDENTITY_PROVIDER}
+      - type: init
+      - type: apply
