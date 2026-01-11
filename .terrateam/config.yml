@@ -1,8 +1,8 @@
-automerge:
+config_builder:
   enabled: true
-  delete_branch: true 
-  merge_strategy: rebase
-  require_explicit_apply: true
+  script: |
+    #! /usr/bin/env bash
+    echo '{"indexer": {"enabled": true}}'
 
 engine:
   name: tofu
