@@ -1,2 +1,23 @@
 engine:
-  name: tofu
+  name: fly
+  config_file: 'app.toml'
+
+when_modified:
+  file_patterns: []
+
+dirs:
+  'app':
+    when_modified:
+      file_patterns: ['${DIR}/*.toml']
+    workspaces:
+      'terrateam-malcolm-blimpup-test-app': {}
+
+cost_estimation:
+  enabled: false
+
+hooks:
+  all:
+    pre:
+      - type: env
+        name: 'FLY_ORG'
+        cmd: ['echo', 'testing-187']
