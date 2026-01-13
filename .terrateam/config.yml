@@ -1,5 +1,8 @@
-drift:
+tree_builder:
   enabled: true
-  schedule: hourly
+  script: |
+    #! /usr/bin/env bash
+    $TERRATEAM_ROOT/bin/tree-builder
+
 engine:
   name: tofu
