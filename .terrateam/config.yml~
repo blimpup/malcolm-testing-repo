@@ -1,0 +1,137 @@
+automerge:
+  enabled: true
+  delete_branch: true
+
+when_modified:
+  autoplan: true
+
+apply_requirements:
+  create_pending_apply_check: true
+  checks:
+    - tag_query: ""
+      status_checks:
+        enabled: true
+        ignore_matching: ["iacbot"]
+
+destination_branches:
+  - branch: 'main'
+    source_branches: [ '*' ]
+
+engine:
+  name: terraform
+  version: 1.5.7
+
+indexer:
+  enabled: true
+
+drift:
+  enabled: true
+  schedule: daily
+  reconcile: false
+
+access_control:
+  policies:
+    - tag_query: 'dev'
+      plan: ['*']
+      apply: ['team:dev']
+    - tag_query: 'not dev'
+      plan: ['*']
+      apply: ['team:phr-admins']
+      apply_with_superapproval: ['team:dev']
+      superapproval: ['team:phr-admins']
+
+dirs:
+  terraform/nigeria-1/bootstrap/*:
+    when_modified:
+      file_patterns: []
+  terraform/**/*:
+    when_modified:
+      file_patterns: [ "${DIR}/*.tf", "${DIR}/*.tfvars", "${DIR}/*.hcl" ]
+  terraform/develop-238811/**/*:
+    tags: [dev]
+  terraform/nigeria-1/**/*:
+    when_modified:
+      file_patterns: []
+  terraform/**/modules/**/*:
+    when_modified:
+      file_patterns: []
+  terraform/global/**/*:
+    when_modified:
+      file_patterns: []
+  terraform/global/tailscale/**/*:
+    when_modified:
+      file_patterns: [ "${DIR}/*.tf", "${DIR}/*.tfvars", "${DIR}/*.hcl" ]
+  terraform/bi-prod-sync/core-infra/**/*:
+    when_modified:
+      file_patterns: [ ]
+  terraform/bi-prod-345912/cluster/**/*:
+    when_modified:
+      file_patterns: [ ]
+  terraform/infra-240614/secrets/**/*:
+    when_modified:
+      file_patterns: [ ]
+  terraform/bi-dev-125934/cluster/**/*:
+    when_modified:
+      file_patterns: [ ]
+  terraform/phr-uat-ng/config/**/*:
+    when_modified:
+      file_patterns: [ ]
+  terraform/phr-uat-ng/log-forwarder/**/*:
+    when_modified:
+      file_patterns: [ ]
+  terraform/phr-uat-ng/shared-services/**/*:
+    when_modified:
+      file_patterns: [ ]
+  terraform/corp-telemetry/monitoring/**/*:
+    when_modified:
+      file_patterns: [ ]
+  infra-new/ansible/**/*:
+    when_modified:
+      file_patterns: [ ]
+  terraform/prod-239510/data-store/auditlogs:
+    when_modified:
+      file_patterns: [ "${DIR}/*.tf", "${DIR}/*.hcl", "terraform/prod-239510/services/aidbox/config/**/*.tf", "terraform/prod-239510/services/aidbox/config/**/*.hcl" ]
+
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: [ 'ssh-keyscan-pre-hook', 'github.com' ]
+      - type: run
+        cmd: [ 'sh', '/github/workspace/.terrateam/scripts/setup-1password-cli.sh' ]
+      - type: run
+        cmd: [ 'op', '--version' ]
+  plan:
+    post:
+      - type: drift_create_issue
+workflows:
+  - tag_query: ""
+    plan:
+      - type: env
+        method: source
+        cmd: ['$TERRATEAM_ROOT/.terrateam/scripts/environment.sh']
+        sensitive: true
+      - type: oidc
+        provider: gcp
+        service_account: ${GCP_SERVICE_ACCOUNT}
+        workload_identity_provider: ${GCP_WORKLOAD_IDENTITY_PROVIDER}
+      - type: init
+      - type: plan
+      - type: run
+        cmd: [ 'conftest-wrapper' ]
+        capture_output: true
+    apply:
+      - type: env
+        method: source
+        cmd: [ '$TERRATEAM_ROOT/.terrateam/scripts/environment.sh' ]
+        sensitive: true
+      - type: oidc
+        provider: gcp
+        service_account: ${GCP_SERVICE_ACCOUNT}
+        workload_identity_provider: ${GCP_WORKLOAD_IDENTITY_PROVIDER}
+      - type: env
+        method: source
+        cmd: [ '$TERRATEAM_ROOT/.terrateam/scripts/google-auth-env.sh' ]
+        sensitive: true
+      - type: init
+      - type: apply
