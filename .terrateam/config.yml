@@ -1,5 +1,4 @@
 engine:
   name: tofu
-workflows:
-- lock_policy: none
-  tag_query: dir:tf
+when_modified:
+  autoplan: false
