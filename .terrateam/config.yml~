@@ -5,9 +5,3 @@ config_builder:
 
 engine:
   name: tofu
-
-dirs:
-  '**/tfvars/**':
-    when_modified:
-      file_patterns: []
-
