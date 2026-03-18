@@ -13,8 +13,4 @@ dirs:
 
 drift:
   enabled: true
-  schedules:
-    default:
-      tag_query: ""
-      schedule: hourly
-
+  schedule: hourly
