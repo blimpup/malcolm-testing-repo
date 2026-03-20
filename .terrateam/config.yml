@@ -1,5 +1,5 @@
 automerge:
-  enabled: true
+  enabled: false
   delete_branch: true
 
 when_modified:
