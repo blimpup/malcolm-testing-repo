@@ -1,9 +1,9 @@
-automerge:
-  enabled: true
-  delete_branch: true
+automerge: #upon applying all changes in a pull request
+  enabled: true #automatically merge the pull request
+  delete_branch: true # and delete the branch
 
 when_modified:
-  autoplan: true
+  autoplan: true #automatically runs a 'terrateam plan' on all PRs
 
 apply_requirements:
   create_pending_apply_check: true
@@ -13,22 +13,31 @@ apply_requirements:
         enabled: true
         ignore_matching: ["iacbot"]
 
+#Pulled from the default branch, i.e. release/xyz
 destination_branches:
-  - branch: 'main'
+  - branch: 'master'
+    source_branches: [ '*' ]
+  - branch: 'release/*'
     source_branches: [ '*' ]
 
+# We are currently pinned on terraform 1.5.7, to get updates we'd need to switch to OpenTofu
+# See https://pkbdev.atlassian.net/browse/DPL-1239
 engine:
   name: terraform
   version: 1.5.7
 
+#https://terrateam.io/docs/configuration-reference/indexer/
 indexer:
   enabled: true
 
+#https://terrateam.io/docs/features/drift-detection/
 drift:
   enabled: true
-  schedule: daily
-  reconcile: false
+  schedule: daily # hourly, daily, weekly, monthly
+  reconcile: false # reconcile: whether to auto restore to the state that is in the state file in GCP, should always be 'false', DO NOT MODIFY!
 
+#https://docs.terrateam.io/security-and-compliance/role-based-access-control/
+#Pulled from the default branch, i.e. release/xyz
 access_control:
   policies:
     - tag_query: 'dev'
@@ -41,38 +50,50 @@ access_control:
       superapproval: ['team:phr-admins']
 
 dirs:
+  # Do NOT run for nigeria-1 as it has no workload identity federation setup.
   terraform/nigeria-1/bootstrap/*:
     when_modified:
       file_patterns: []
+  #Only run for files under 'terraform' top level directory
   terraform/**/*:
     when_modified:
       file_patterns: [ "${DIR}/*.tf", "${DIR}/*.tfvars", "${DIR}/*.hcl" ]
+  # Tag develop directory for more relaxed access control, see https://docs.terrateam.io/advanced-workflows/tags/
   terraform/develop-238811/**/*:
     tags: [dev]
+  #Do NOT run for nigeria-1 just yet.
   terraform/nigeria-1/**/*:
     when_modified:
       file_patterns: []
+  #Do NOT run for any 'modules' directory
   terraform/**/modules/**/*:
     when_modified:
       file_patterns: []
+  #Do NOT run for 'terraform/global' directory
   terraform/global/**/*:
     when_modified:
       file_patterns: []
+  # Run for 'terraform/global/tailscale' directory
   terraform/global/tailscale/**/*:
     when_modified:
       file_patterns: [ "${DIR}/*.tf", "${DIR}/*.tfvars", "${DIR}/*.hcl" ]
+  #Do NOT run for 'terraform/bi-prod-sync/core-infra' directory //TODO: DPL-867
   terraform/bi-prod-sync/core-infra/**/*:
     when_modified:
       file_patterns: [ ]
+  #Do NOT run for 'terraform/bi-prod-345912/cluster' directory //TODO:
   terraform/bi-prod-345912/cluster/**/*:
     when_modified:
       file_patterns: [ ]
+  #Do NOT run for 'terraform/infra-240614/secrets' directory //TODO:
   terraform/infra-240614/secrets/**/*:
     when_modified:
       file_patterns: [ ]
+  #Do NOT run for 'terraform/bi-dev-125934/cluster' directory //TODO:
   terraform/bi-dev-125934/cluster/**/*:
     when_modified:
       file_patterns: [ ]
+  #Do NOT run for 'terraform/phr-uat-ng' directories that use Kubernetes //TODO:
   terraform/phr-uat-ng/config/**/*:
     when_modified:
       file_patterns: [ ]
@@ -88,10 +109,12 @@ dirs:
   infra-new/ansible/**/*:
     when_modified:
       file_patterns: [ ]
+  #Run for changes to prod aidbox config
   terraform/prod-239510/data-store/auditlogs:
     when_modified:
       file_patterns: [ "${DIR}/*.tf", "${DIR}/*.hcl", "terraform/prod-239510/services/aidbox/config/**/*.tf", "terraform/prod-239510/services/aidbox/config/**/*.hcl" ]
-
+#Keyscan required to add SSH keys for terraform module downloads from GitHub
+#https://terrateam.io/docs/features/drift-detection/
 hooks:
   all:
     pre:
