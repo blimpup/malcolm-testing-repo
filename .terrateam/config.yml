@@ -1,2 +1,7 @@
 engine:
   name: tofu
+dirs:
+  "**":
+    when_modified:
+      file_patterns:
+      - ${DIR}/*.tf
