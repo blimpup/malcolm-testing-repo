@@ -1,5 +1,2 @@
 engine:
   name: tofu
-
-apply:
-  partial: true
