@@ -1,10 +1,11 @@
-# tree_builder makes Terrateam store a repo tree for the destination branch as well as for the
-# pull request branch, so a change that lands on the destination branch after a pull request has
-# already planned invalidates a tree that pull request depends on.  Same script on every branch,
-# so a file that did not change keeps its id.
+# tree_builder is what puts the destination branch's files into the pull request branch's stored
+# tree: the runner merges the destination branch into the checkout before it runs this script, so
+# the tree of a pull request branch is the tree of the MERGE, not of the branch.  Same script on
+# every branch, so a file that did not change keeps its id.
 #
-# indexer adds the second derived artifact the re-plan has to rebuild: the index is built from the
-# stored tree, so both have to be redone against the new destination sha before the plan can run.
+# indexer consumes that tree.  The index work manifest is handed every directory in it, and the
+# index run is the one kind of run the runner does NOT merge -- which is the defect this fixture
+# exists for.  See the comment on test_replan_after_new_dest_dir.
 tree_builder:
   enabled: true
   script: |
