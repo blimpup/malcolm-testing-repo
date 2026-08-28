@@ -1,2 +1,18 @@
+# tree_builder makes Terrateam store a repo tree for the destination branch as well as for the
+# pull request branch, so a change that lands on the destination branch after a pull request has
+# already planned invalidates a tree that pull request depends on.  Same script on every branch,
+# so a file that did not change keeps its id.
+#
+# indexer adds the second derived artifact the re-plan has to rebuild: the index is built from the
+# stored tree, so both have to be redone against the new destination sha before the plan can run.
+tree_builder:
+  enabled: true
+  script: |
+    #! /usr/bin/env bash
+    $TERRATEAM_ROOT/bin/tree-builder
+
+indexer:
+  enabled: true
+
 engine:
   name: tofu
