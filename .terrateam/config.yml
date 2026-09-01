@@ -1,6 +1,7 @@
 automerge:
   enabled: true
-  merge_strategy: squash
+  delete_branch: true 
+  merge_strategy: rebase
 
 engine:
   name: tofu
