@@ -1,10 +1,6 @@
-apply_requirements:
-  checks:
-  - require_ready_for_review_pr: false
-    tag_query: ''
 automerge:
   enabled: true
+  merge_strategy: squash
+
 engine:
   name: tofu
-when_modified:
-  autoplan_draft_pr: true
