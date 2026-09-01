@@ -1,2 +1,6 @@
+automerge:
+  enabled: true
+  merge_strategy: squash
+
 engine:
   name: tofu
