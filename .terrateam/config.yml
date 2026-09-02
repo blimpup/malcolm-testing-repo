@@ -1,2 +1,9 @@
 engine:
   name: tofu
+workflows:
+  - tag_query: ''
+    plan:
+      - type: init
+        visible_on: always
+      - type: plan
+        visible_on: failure
