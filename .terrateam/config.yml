@@ -1,5 +1,5 @@
 dirs:
-  marker_terrateam_fallback:
+  marker_default_config:
     when_modified:
       autoplan: false
 engine:
