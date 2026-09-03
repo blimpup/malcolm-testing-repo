@@ -1,5 +1,5 @@
 dirs:
-  marker_stategraph_yaml_must_not_win:
+  marker_terrateam_after_empty_yml:
     when_modified:
       autoplan: false
 engine:
