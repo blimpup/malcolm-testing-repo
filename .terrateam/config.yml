@@ -1,6 +1,2 @@
-dirs:
-  marker_terrateam_fallback:
-    when_modified:
-      autoplan: false
 engine:
   name: tofu
