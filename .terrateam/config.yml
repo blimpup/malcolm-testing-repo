@@ -1,5 +1,5 @@
 dirs:
-  marker_stategraph_wins:
+  marker_terrateam_loses:
     when_modified:
       autoplan: false
 engine:
