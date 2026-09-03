@@ -1,6 +1,0 @@
-dirs:
-  marker_stategraph_yaml_must_not_win:
-    when_modified:
-      autoplan: false
-engine:
-  name: tofu
