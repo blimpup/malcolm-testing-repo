@@ -1,5 +1,5 @@
 dirs:
-  marker_default_config:
+  marker_feature_config:
     when_modified:
       autoplan: false
 engine:
