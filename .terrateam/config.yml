@@ -1,8 +1,11 @@
-config_builder:
-  enabled: true
-  script: |
-    #! /usr/bin/env bash
-    echo '{"indexer": {"enabled": true}}'
-
-engine:
-  name: tofu
+# The default branch runs no builder on purpose.  This fixture counts the action
+# runs of the working branch, and a builder here would add a run of its own for
+# the destination branch.  Two builder results that land together evaluate the
+# job at the same time, and each of them then makes a plan, because the work
+# manifest of a job is deduplicated by a read and not by a lock.  That race is
+# older than RFD 2094 and it is not what this fixture is for.
+hooks:
+  all:
+    pre:
+      - type: run
+        cmd: ['${TERRATEAM_ROOT}/bin/generate', 'build']
