@@ -1,5 +1,0 @@
-base:
-  depends_on: []
-  resources:
-    core_resource:
-      type: null_resource
