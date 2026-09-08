@@ -1,2 +1,15 @@
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['false']
+      - type: init
+      - type: plan
+
+notifications:
+  summary:
+    enabled: true
+    mode: pull_request
+
 engine:
   name: tofu
