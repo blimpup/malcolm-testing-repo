@@ -1,2 +1,24 @@
+when_modified:
+  autoapply: false
+  autoplan: false
+
+notifications:
+  summary:
+    enabled: true
+    mode: pull_request
+
+workflows:
+  - tag_query: 'dir:tf2'
+    plan:
+      - type: run
+        cmd: ['false']
+      - type: init
+      - type: plan
+
+  - tag_query: ''
+    plan:
+      - type: init
+      - type: plan
+
 engine:
   name: tofu
