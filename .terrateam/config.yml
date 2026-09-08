@@ -1,2 +1,11 @@
+when_modified:
+  autoapply: false
+
+notifications:
+  summary:
+    enabled: true
+    output_details:
+      enabled: true
+
 engine:
   name: tofu
