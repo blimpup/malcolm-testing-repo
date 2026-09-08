@@ -1,2 +1,20 @@
+when_modified:
+  autoapply: false
+  autoplan: false
+
+access_control:
+  enabled: true
+  policies:
+  - plan: []
+    tag_query: dir:tf2
+  - plan:
+    - '*'
+    tag_query: ''
+
+notifications:
+  summary:
+    enabled: true
+    mode: pull_request
+
 engine:
   name: tofu
