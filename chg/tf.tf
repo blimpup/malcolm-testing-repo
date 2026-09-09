@@ -4,6 +4,6 @@ resource "terraform_data" "datum" {
 
 resource "null_resource" "res" {
   triggers = {
-    rev = "1"
+    rev = "2"
   }
 }
