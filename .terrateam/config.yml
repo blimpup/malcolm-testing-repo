@@ -1,2 +1,10 @@
 engine:
   name: tofu
+
+notifications:
+  plan:
+    status_checks:
+      enabled: false
+  apply:
+    status_checks:
+      enabled: true
