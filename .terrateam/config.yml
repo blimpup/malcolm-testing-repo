@@ -1,2 +1,12 @@
+when_modified:
+  autoapply: false
+
+notifications:
+  plan:
+    visible_on: never
+  summary:
+    enabled: true
+    mode: pull_request
+
 engine:
   name: tofu
