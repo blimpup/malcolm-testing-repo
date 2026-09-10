@@ -7,8 +7,7 @@
  #
  # See https://docs.terrateam.io/configuration/overview for details
  ##########################################################################
- name: 'Terrateam Workflow'
- run-name: "Terrateam ${{ inputs.run-kind }} ${{ inputs.run-type }} ${{ inputs.pr-number }} ${{ inputs.pr-title }}"
+ name: 'Not Terrateam Workflow'
  on:
    workflow_dispatch:
      inputs:
@@ -21,14 +20,6 @@
        environment:
          description: 'Environment in which to run the action'
          type: environment
-       run-kind:
-         default: ""
-       run-type:
-         default: ""
-       pr-title:
-         default: ""
-       pr-number:
-         default: ""
  jobs:
    terrateam:
      permissions: # Required to pass credentials to the Terrateam action
