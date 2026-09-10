@@ -1,2 +1,5 @@
+when_modified:
+  autoapply: false
+
 engine:
   name: tofu
