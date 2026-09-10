@@ -1,2 +1,18 @@
+when_modified:
+  autoapply: false
+
+notifications:
+  summary:
+    enabled: true
+    mode: pull_request
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['sleep', '45']
+      - type: init
+      - type: plan
+
 engine:
   name: tofu
