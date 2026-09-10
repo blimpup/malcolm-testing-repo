@@ -1,2 +1,19 @@
+when_modified:
+  autoapply: false
+
+workflows:
+  - tag_query: ''
+    plan:
+      - type: run
+        cmd: ['false']
+      - type: init
+      - type: plan
+
+notifications:
+  plan:
+    visible_on: failure
+  summary:
+    enabled: true
+
 engine:
   name: tofu
