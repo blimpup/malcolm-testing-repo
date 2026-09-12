@@ -1,13 +1,8 @@
-config_builder:
+tree_builder:
   enabled: true
   script: |
     #! /usr/bin/env bash
-    echo '{"engine": {"name": "tofu"}, "workflows": [{"tag_query": "dir:tf1", "runs_on": "ubuntu-latest"}, {"tag_query": "dir:tf2", "runs_on": ["ubuntu-latest"]}]}'
+    $TERRATEAM_ROOT/bin/tree-builder
 
 engine:
   name: tofu
-workflows:
-- runs_on: ubuntu-latest
-  tag_query: dir:tf1
-- runs_on: [ubuntu-latest]
-  tag_query: dir:tf2
