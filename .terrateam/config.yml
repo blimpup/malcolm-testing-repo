@@ -1,2 +1,13 @@
+config_builder:
+  enabled: true
+  script: |
+    #! /usr/bin/env bash
+    echo '{"engine": {"name": "tofu"}, "workflows": [{"tag_query": "dir:tf1", "environment": "development"}, {"tag_query": "dir:tf2", "environment": "production"}]}'
+
 engine:
   name: tofu
+workflows:
+- environment: development
+  tag_query: dir:tf1
+- environment: production
+  tag_query: dir:tf2
