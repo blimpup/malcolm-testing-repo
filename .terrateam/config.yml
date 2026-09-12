@@ -1,2 +1,9 @@
 engine:
   name: tofu
+indexer:
+  enabled: true
+workflows:
+- environment: development
+  tag_query: dir:tf1
+- environment: production
+  tag_query: dir:tf2
