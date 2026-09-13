@@ -29,16 +29,12 @@
          default: ""
        pr-number:
          default: ""
-       runs_on:
-         description: 'runs-on configuration'
-         type: string
-         default: '"ubuntu-latest"'
  jobs:
    terrateam:
      permissions: # Required to pass credentials to the Terrateam action
        id-token: write
        contents: read
-     runs-on: ${{ fromJSON(inputs.runs_on) }}
+     runs-on: ubuntu-latest
      timeout-minutes: 1440
      name: Terrateam Action
      environment: '${{ github.event.inputs.environment }}'
