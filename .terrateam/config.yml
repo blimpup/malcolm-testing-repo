@@ -1,13 +1,13 @@
-tree_builder:
-  enabled: true
-  script: '${TERRATEAM_ROOT}/bin/generate build-tree'
-
 config_builder:
   enabled: true
-  script: '${TERRATEAM_ROOT}/bin/generate build-config'
+  script: |
+    #! /usr/bin/env bash
+    echo '{"engine": {"name": "tofu"}, "workflows": [{"tag_query": "dir:tf1", "runs_on": "ubuntu-latest"}, {"tag_query": "dir:tf2", "runs_on": ["ubuntu-latest"]}]}'
 
-hooks:
-  all:
-    pre:
-      - type: run
-        cmd: ['${TERRATEAM_ROOT}/bin/generate', 'build']
+engine:
+  name: tofu
+workflows:
+- runs_on: ubuntu-latest
+  tag_query: dir:tf1
+- runs_on: [ubuntu-latest]
+  tag_query: dir:tf2
