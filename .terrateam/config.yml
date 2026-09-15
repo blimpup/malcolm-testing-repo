@@ -1,45 +1,22 @@
-# The same six directories and the same depends_on as core/stacks/0028, with one
-# difference: both environment stacks are nested under the stack everything.
-# The two stacks now share a stack, so the dependency stays inside it and the
-# configuration must be accepted.
+# Two environments, dev and prod.  Each has three directories that must run in
+# order, given by layered runs (when_modified.depends_on).  There are no stacks,
+# so nothing orders one environment against the other: a user may walk one
+# branch of the tree to its end before starting the other one.
 dirs:
-  dev/networking:
-    tags:
-      - dev
+  dev/networking: {}
   dev/database:
-    tags:
-      - dev
     when_modified:
-      depends_on: 'dir:prod/networking'
+      depends_on: 'dir:dev/networking'
   dev/app:
-    tags:
-      - dev
     when_modified:
       depends_on: 'dir:dev/database'
-  prod/networking:
-    tags:
-      - prod
+  prod/networking: {}
   prod/database:
-    tags:
-      - prod
     when_modified:
       depends_on: 'dir:prod/networking'
   prod/app:
-    tags:
-      - prod
     when_modified:
       depends_on: 'dir:prod/database'
-
-stacks:
-  names:
-    everything:
-      stacks:
-        - dev
-        - prod
-    dev:
-      tag_query: 'dev'
-    prod:
-      tag_query: 'prod'
 
 engine:
   name: tofu
