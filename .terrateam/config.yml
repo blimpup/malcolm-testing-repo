@@ -1,2 +1,32 @@
+# by_phase permits every step, as all does, but only into an action run of the
+# same phase.  The tree builder, the config builder and the indexer make the
+# setup phase and share one run.  The plans of the three layers make the layer
+# phase and share another.  The two phases never share a run.
+batch_runs:
+  merge_steps: by_phase
+
+tree_builder:
+  enabled: true
+  script: |
+    #! /usr/bin/env bash
+    $TERRATEAM_ROOT/bin/tree-builder
+
+config_builder:
+  enabled: true
+  script: |
+    #! /usr/bin/env bash
+    echo '{"indexer": {"enabled": true}}'
+
+dirs:
+  database1:
+    when_modified:
+      depends_on: dir:base
+  database2:
+    when_modified:
+      depends_on: dir:base
+  webservice:
+    when_modified:
+      depends_on: dir:database1 or dir:database2
+
 engine:
   name: tofu
