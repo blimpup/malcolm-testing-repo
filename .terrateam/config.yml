@@ -1,2 +1,32 @@
+# The same repository as 0008, with all in place of by_phase.  all has no wall
+# between the phases, so the whole job takes one action run.  The pair of
+# fixtures is what shows that the wall of by_phase is the only thing that makes
+# the second run.
+batch_runs:
+  merge_steps: all
+
+tree_builder:
+  enabled: true
+  script: |
+    #! /usr/bin/env bash
+    $TERRATEAM_ROOT/bin/tree-builder
+
+config_builder:
+  enabled: true
+  script: |
+    #! /usr/bin/env bash
+    echo '{"indexer": {"enabled": true}}'
+
+dirs:
+  database1:
+    when_modified:
+      depends_on: dir:base
+  database2:
+    when_modified:
+      depends_on: dir:base
+  webservice:
+    when_modified:
+      depends_on: dir:database1 or dir:database2
+
 engine:
   name: tofu
