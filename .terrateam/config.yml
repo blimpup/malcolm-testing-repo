@@ -2,10 +2,11 @@ config_builder:
   enabled: true
   script: |
     #! /usr/bin/env bash
-    echo '{"dirs": {"infra": {}}}'
+    echo "On purpose failed config run"
+    exit 1
 engine:
   name: tofu
 when_modified:
   prechecks:
     - config_file_patterns:
-        stale_config_min: 0
+        stale_config_min: 60
