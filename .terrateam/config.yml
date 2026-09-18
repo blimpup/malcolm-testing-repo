@@ -2,4 +2,4 @@ engine:
   name: tofu
 when_modified:
   prechecks:
-    - user: ['!terrateam-test-user02']
+    - user: ['terrateam-test-user01', '!terrateam-test-user02']
