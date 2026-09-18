@@ -1,9 +1,12 @@
 dirs:
+  app:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf']
   infra:
     when_modified:
-      file_patterns: ['${DIR}/*.tf', 'docs/**']
+      file_patterns: ['${DIR}/*.tf']
 engine:
   name: tofu
 when_modified:
   prechecks:
-    - file_patterns: ['!docs/**']
+    - file_patterns: ['infra/**', '!docs/**']
