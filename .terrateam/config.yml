@@ -1,5 +1,9 @@
+dirs:
+  infra:
+    when_modified:
+      file_patterns: ['${DIR}/*.tf', 'docs/**']
 engine:
   name: tofu
 when_modified:
   prechecks:
-    - user: ['terrateam-test-user01', '!terrateam-test-user02']
+    - file_patterns: ['!docs/**']
