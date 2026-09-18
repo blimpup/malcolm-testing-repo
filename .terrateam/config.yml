@@ -1,6 +1,11 @@
+config_builder:
+  enabled: true
+  script: |
+    #! /usr/bin/env bash
+    echo '{"dirs": {"infra": {}}}'
 engine:
   name: tofu
 when_modified:
   prechecks:
-    - user: ['terrateam-test-user01']
-    - file_patterns: ['infra/**']
+    - config_file_patterns:
+        stale_config_min: 60
