@@ -9,3 +9,5 @@ when_modified:
   prechecks:
     - config_file_patterns:
         stale_config_min: 60
+
+# The pull request changes this file too.
